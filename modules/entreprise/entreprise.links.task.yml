@@ -1,0 +1,18 @@
+# Entreprise routing definition
+
+entity.entreprise.canonical:
+  route_name: entity.entreprise.canonical
+  base_route: entity.entreprise.canonical
+  title: 'View'
+
+entity.entreprise.edit_form:
+  route_name: entity.entreprise.edit_form
+  base_route: entity.entreprise.canonical
+  title: 'Edit'
+
+entity.entreprise.delete_form:
+  route_name:  entity.entreprise.delete_form
+  base_route:  entity.entreprise.canonical
+  title: Delete
+  weight: 10
+

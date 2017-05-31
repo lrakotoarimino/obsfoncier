@@ -1,0 +1,18 @@
+
+# Entreprise menu items definition
+entity.entreprise.collection:
+  title: 'Entreprise list'
+  route_name: entity.entreprise.collection
+  description: 'List Entreprise entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Entreprise type menu items definition
+entity.entreprise_type.collection:
+  title: 'Entreprise type'
+  route_name: entity.entreprise_type.collection
+  description: 'List Entreprise type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

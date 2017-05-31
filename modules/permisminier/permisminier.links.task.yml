@@ -1,0 +1,18 @@
+# Permisminier routing definition
+
+entity.permisminier.canonical:
+  route_name: entity.permisminier.canonical
+  base_route: entity.permisminier.canonical
+  title: 'View'
+
+entity.permisminier.edit_form:
+  route_name: entity.permisminier.edit_form
+  base_route: entity.permisminier.canonical
+  title: 'Edit'
+
+entity.permisminier.delete_form:
+  route_name:  entity.permisminier.delete_form
+  base_route:  entity.permisminier.canonical
+  title: Delete
+  weight: 10
+

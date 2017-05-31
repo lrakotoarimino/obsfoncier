@@ -1,0 +1,11 @@
+entity.projet.add_form:
+  route_name: 'entity.projet.add_page'
+  title: 'Add Projet'
+  appears_on:
+    - entity.projet.collection
+entity.projet_type.add_form:
+  route_name: 'entity.projet_type.add_form'
+  title: 'Add Projet type'
+  appears_on:
+    - entity.projet_type.collection
+

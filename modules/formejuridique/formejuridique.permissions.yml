@@ -1,0 +1,22 @@
+add formejuridique entities:
+  title: 'Create new Formejuridique entities'
+
+administer formejuridique entities:
+  title: 'Administer Formejuridique entities'
+  description: 'Allow to access the administration form to configure Formejuridique entities.'
+  restrict access: true
+
+delete formejuridique entities:
+  title: 'Delete Formejuridique entities'
+
+edit formejuridique entities:
+  title: 'Edit Formejuridique entities'
+
+access formejuridique overview:
+  title: 'Access the Formejuridique overview page'
+
+view published formejuridique entities:
+  title: 'View published Formejuridique entities'
+
+view unpublished formejuridique entities:
+  title: 'View unpublished Formejuridique entities'

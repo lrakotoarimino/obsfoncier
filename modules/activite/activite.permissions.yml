@@ -1,0 +1,22 @@
+add activite entities:
+  title: 'Create new Activite entities'
+
+administer activite entities:
+  title: 'Administer Activite entities'
+  description: 'Allow to access the administration form to configure Activite entities.'
+  restrict access: true
+
+delete activite entities:
+  title: 'Delete Activite entities'
+
+edit activite entities:
+  title: 'Edit Activite entities'
+
+access activite overview:
+  title: 'Access the Activite overview page'
+
+view published activite entities:
+  title: 'View published Activite entities'
+
+view unpublished activite entities:
+  title: 'View unpublished Activite entities'

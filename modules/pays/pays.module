@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains pays.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function pays_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the pays module.
+    case 'help.page.pays':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Liste des pays') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function pays_theme() {
+  $theme = [];
+  $theme['pays'] = [
+    'render element' => 'elements',
+    'file' => 'pays.page.inc',
+    'template' => 'pays',
+  ];
+  $theme['pays_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'pays.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function pays_theme_suggestions_pays(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#pays'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'pays__' . $sanitized_view_mode;
+  $suggestions[] = 'pays__' . $entity->bundle();
+  $suggestions[] = 'pays__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'pays__' . $entity->id();
+  $suggestions[] = 'pays__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

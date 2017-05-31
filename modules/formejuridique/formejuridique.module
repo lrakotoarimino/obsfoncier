@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains formejuridique.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function formejuridique_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the formejuridique module.
+    case 'help.page.formejuridique':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Liste des formes juridiques') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function formejuridique_theme() {
+  $theme = [];
+  $theme['formejuridique'] = [
+    'render element' => 'elements',
+    'file' => 'formejuridique.page.inc',
+    'template' => 'formejuridique',
+  ];
+  $theme['formejuridique_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'formejuridique.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function formejuridique_theme_suggestions_formejuridique(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#formejuridique'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'formejuridique__' . $sanitized_view_mode;
+  $suggestions[] = 'formejuridique__' . $entity->bundle();
+  $suggestions[] = 'formejuridique__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'formejuridique__' . $entity->id();
+  $suggestions[] = 'formejuridique__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

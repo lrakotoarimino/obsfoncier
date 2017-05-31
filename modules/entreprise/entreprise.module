@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains entreprise.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function entreprise_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the entreprise module.
+    case 'help.page.entreprise':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Gestion des entreprises') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function entreprise_theme() {
+  $theme = [];
+  $theme['entreprise'] = [
+    'render element' => 'elements',
+    'file' => 'entreprise.page.inc',
+    'template' => 'entreprise',
+  ];
+  $theme['entreprise_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'entreprise.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function entreprise_theme_suggestions_entreprise(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#entreprise'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'entreprise__' . $sanitized_view_mode;
+  $suggestions[] = 'entreprise__' . $entity->bundle();
+  $suggestions[] = 'entreprise__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'entreprise__' . $entity->id();
+  $suggestions[] = 'entreprise__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

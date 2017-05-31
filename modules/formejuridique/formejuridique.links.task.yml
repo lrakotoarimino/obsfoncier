@@ -1,0 +1,18 @@
+# Formejuridique routing definition
+
+entity.formejuridique.canonical:
+  route_name: entity.formejuridique.canonical
+  base_route: entity.formejuridique.canonical
+  title: 'View'
+
+entity.formejuridique.edit_form:
+  route_name: entity.formejuridique.edit_form
+  base_route: entity.formejuridique.canonical
+  title: 'Edit'
+
+entity.formejuridique.delete_form:
+  route_name:  entity.formejuridique.delete_form
+  base_route:  entity.formejuridique.canonical
+  title: Delete
+  weight: 10
+

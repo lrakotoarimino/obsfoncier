@@ -1,0 +1,18 @@
+# Phase routing definition
+
+entity.phase.canonical:
+  route_name: entity.phase.canonical
+  base_route: entity.phase.canonical
+  title: 'View'
+
+entity.phase.edit_form:
+  route_name: entity.phase.edit_form
+  base_route: entity.phase.canonical
+  title: 'Edit'
+
+entity.phase.delete_form:
+  route_name:  entity.phase.delete_form
+  base_route:  entity.phase.canonical
+  title: Delete
+  weight: 10
+

@@ -1,0 +1,18 @@
+# Typepermis routing definition
+
+entity.typepermis.canonical:
+  route_name: entity.typepermis.canonical
+  base_route: entity.typepermis.canonical
+  title: 'View'
+
+entity.typepermis.edit_form:
+  route_name: entity.typepermis.edit_form
+  base_route: entity.typepermis.canonical
+  title: 'Edit'
+
+entity.typepermis.delete_form:
+  route_name:  entity.typepermis.delete_form
+  base_route:  entity.typepermis.canonical
+  title: Delete
+  weight: 10
+

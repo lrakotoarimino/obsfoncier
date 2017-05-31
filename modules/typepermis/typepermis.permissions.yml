@@ -1,0 +1,22 @@
+add typepermis entities:
+  title: 'Create new Typepermis entities'
+
+administer typepermis entities:
+  title: 'Administer Typepermis entities'
+  description: 'Allow to access the administration form to configure Typepermis entities.'
+  restrict access: true
+
+delete typepermis entities:
+  title: 'Delete Typepermis entities'
+
+edit typepermis entities:
+  title: 'Edit Typepermis entities'
+
+access typepermis overview:
+  title: 'Access the Typepermis overview page'
+
+view published typepermis entities:
+  title: 'View published Typepermis entities'
+
+view unpublished typepermis entities:
+  title: 'View unpublished Typepermis entities'

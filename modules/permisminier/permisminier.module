@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains permisminier.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function permisminier_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the permisminier module.
+    case 'help.page.permisminier':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Saisie des permis miniers') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function permisminier_theme() {
+  $theme = [];
+  $theme['permisminier'] = [
+    'render element' => 'elements',
+    'file' => 'permisminier.page.inc',
+    'template' => 'permisminier',
+  ];
+  $theme['permisminier_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'permisminier.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function permisminier_theme_suggestions_permisminier(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#permisminier'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'permisminier__' . $sanitized_view_mode;
+  $suggestions[] = 'permisminier__' . $entity->bundle();
+  $suggestions[] = 'permisminier__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'permisminier__' . $entity->id();
+  $suggestions[] = 'permisminier__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

@@ -1,0 +1,11 @@
+entity.formejuridique.add_form:
+  route_name: 'entity.formejuridique.add_page'
+  title: 'Add Formejuridique'
+  appears_on:
+    - entity.formejuridique.collection
+entity.formejuridique_type.add_form:
+  route_name: 'entity.formejuridique_type.add_form'
+  title: 'Add Formejuridique type'
+  appears_on:
+    - entity.formejuridique_type.collection
+

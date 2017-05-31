@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains phase.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function phase_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the phase module.
+    case 'help.page.phase':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Gestion des phases') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function phase_theme() {
+  $theme = [];
+  $theme['phase'] = [
+    'render element' => 'elements',
+    'file' => 'phase.page.inc',
+    'template' => 'phase',
+  ];
+  $theme['phase_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'phase.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function phase_theme_suggestions_phase(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#phase'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'phase__' . $sanitized_view_mode;
+  $suggestions[] = 'phase__' . $entity->bundle();
+  $suggestions[] = 'phase__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'phase__' . $entity->id();
+  $suggestions[] = 'phase__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

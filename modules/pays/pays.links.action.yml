@@ -1,0 +1,11 @@
+entity.pays.add_form:
+  route_name: 'entity.pays.add_page'
+  title: 'Add Pays'
+  appears_on:
+    - entity.pays.collection
+entity.pays_type.add_form:
+  route_name: 'entity.pays_type.add_form'
+  title: 'Add Pays type'
+  appears_on:
+    - entity.pays_type.collection
+

@@ -1,0 +1,5 @@
+name: entreprise
+type: module
+description: Gestion des entreprises
+core: 8.x
+package: entreprise

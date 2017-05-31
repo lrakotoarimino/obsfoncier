@@ -1,0 +1,22 @@
+add secteur entities:
+  title: 'Create new Secteur entities'
+
+administer secteur entities:
+  title: 'Administer Secteur entities'
+  description: 'Allow to access the administration form to configure Secteur entities.'
+  restrict access: true
+
+delete secteur entities:
+  title: 'Delete Secteur entities'
+
+edit secteur entities:
+  title: 'Edit Secteur entities'
+
+access secteur overview:
+  title: 'Access the Secteur overview page'
+
+view published secteur entities:
+  title: 'View published Secteur entities'
+
+view unpublished secteur entities:
+  title: 'View unpublished Secteur entities'

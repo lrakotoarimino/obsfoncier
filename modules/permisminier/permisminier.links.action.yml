@@ -1,0 +1,11 @@
+entity.permisminier.add_form:
+  route_name: 'entity.permisminier.add_page'
+  title: 'Add Permisminier'
+  appears_on:
+    - entity.permisminier.collection
+entity.permisminier_type.add_form:
+  route_name: 'entity.permisminier_type.add_form'
+  title: 'Add Permisminier type'
+  appears_on:
+    - entity.permisminier_type.collection
+

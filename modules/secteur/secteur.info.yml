@@ -1,0 +1,5 @@
+name: secteur
+type: module
+description: Gestion des secteurs
+core: 8.x
+package: secteur

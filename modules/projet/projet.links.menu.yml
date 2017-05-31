@@ -1,0 +1,18 @@
+
+# Projet menu items definition
+entity.projet.collection:
+  title: 'Projet list'
+  route_name: entity.projet.collection
+  description: 'List Projet entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Projet type menu items definition
+entity.projet_type.collection:
+  title: 'Projet type'
+  route_name: entity.projet_type.collection
+  description: 'List Projet type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

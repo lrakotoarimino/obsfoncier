@@ -1,0 +1,22 @@
+{#
+/**
+ * @file phase.html.twig
+ * Default theme implementation to present Phase data.
+ *
+ * This template is used when viewing Phase pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_phase()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('phase') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

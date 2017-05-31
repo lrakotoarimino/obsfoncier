@@ -1,0 +1,18 @@
+
+# Formejuridique menu items definition
+entity.formejuridique.collection:
+  title: 'Formejuridique list'
+  route_name: entity.formejuridique.collection
+  description: 'List Formejuridique entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Formejuridique type menu items definition
+entity.formejuridique_type.collection:
+  title: 'Formejuridique type'
+  route_name: entity.formejuridique_type.collection
+  description: 'List Formejuridique type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

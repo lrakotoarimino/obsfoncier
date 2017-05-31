@@ -1,0 +1,11 @@
+entity.entreprise.add_form:
+  route_name: 'entity.entreprise.add_page'
+  title: 'Add Entreprise'
+  appears_on:
+    - entity.entreprise.collection
+entity.entreprise_type.add_form:
+  route_name: 'entity.entreprise_type.add_form'
+  title: 'Add Entreprise type'
+  appears_on:
+    - entity.entreprise_type.collection
+

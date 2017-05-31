@@ -1,0 +1,22 @@
+add pays entities:
+  title: 'Create new Pays entities'
+
+administer pays entities:
+  title: 'Administer Pays entities'
+  description: 'Allow to access the administration form to configure Pays entities.'
+  restrict access: true
+
+delete pays entities:
+  title: 'Delete Pays entities'
+
+edit pays entities:
+  title: 'Edit Pays entities'
+
+access pays overview:
+  title: 'Access the Pays overview page'
+
+view published pays entities:
+  title: 'View published Pays entities'
+
+view unpublished pays entities:
+  title: 'View unpublished Pays entities'

@@ -1,0 +1,12 @@
+permisminier.permisminier_type.*:
+  type: config_entity
+  label: 'Permisminier type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

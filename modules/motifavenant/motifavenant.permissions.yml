@@ -1,0 +1,22 @@
+add motifavenant entities:
+  title: 'Create new Motifavenant entities'
+
+administer motifavenant entities:
+  title: 'Administer Motifavenant entities'
+  description: 'Allow to access the administration form to configure Motifavenant entities.'
+  restrict access: true
+
+delete motifavenant entities:
+  title: 'Delete Motifavenant entities'
+
+edit motifavenant entities:
+  title: 'Edit Motifavenant entities'
+
+access motifavenant overview:
+  title: 'Access the Motifavenant overview page'
+
+view published motifavenant entities:
+  title: 'View published Motifavenant entities'
+
+view unpublished motifavenant entities:
+  title: 'View unpublished Motifavenant entities'

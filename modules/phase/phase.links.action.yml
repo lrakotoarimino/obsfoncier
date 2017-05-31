@@ -1,0 +1,11 @@
+entity.phase.add_form:
+  route_name: 'entity.phase.add_page'
+  title: 'Add Phase'
+  appears_on:
+    - entity.phase.collection
+entity.phase_type.add_form:
+  route_name: 'entity.phase_type.add_form'
+  title: 'Add Phase type'
+  appears_on:
+    - entity.phase_type.collection
+

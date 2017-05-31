@@ -1,0 +1,22 @@
+add permisminier entities:
+  title: 'Create new Permisminier entities'
+
+administer permisminier entities:
+  title: 'Administer Permisminier entities'
+  description: 'Allow to access the administration form to configure Permisminier entities.'
+  restrict access: true
+
+delete permisminier entities:
+  title: 'Delete Permisminier entities'
+
+edit permisminier entities:
+  title: 'Edit Permisminier entities'
+
+access permisminier overview:
+  title: 'Access the Permisminier overview page'
+
+view published permisminier entities:
+  title: 'View published Permisminier entities'
+
+view unpublished permisminier entities:
+  title: 'View unpublished Permisminier entities'

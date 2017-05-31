@@ -1,0 +1,5 @@
+name: projet
+type: module
+description: Gestion des projets
+core: 8.x
+package: projet

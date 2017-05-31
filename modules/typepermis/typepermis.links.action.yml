@@ -1,0 +1,11 @@
+entity.typepermis.add_form:
+  route_name: 'entity.typepermis.add_page'
+  title: 'Add Typepermis'
+  appears_on:
+    - entity.typepermis.collection
+entity.typepermis_type.add_form:
+  route_name: 'entity.typepermis_type.add_form'
+  title: 'Add Typepermis type'
+  appears_on:
+    - entity.typepermis_type.collection
+

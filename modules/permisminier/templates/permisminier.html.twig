@@ -1,0 +1,22 @@
+{#
+/**
+ * @file permisminier.html.twig
+ * Default theme implementation to present Permisminier data.
+ *
+ * This template is used when viewing Permisminier pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_permisminier()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('permisminier') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

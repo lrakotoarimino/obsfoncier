@@ -1,0 +1,18 @@
+# Activite routing definition
+
+entity.activite.canonical:
+  route_name: entity.activite.canonical
+  base_route: entity.activite.canonical
+  title: 'View'
+
+entity.activite.edit_form:
+  route_name: entity.activite.edit_form
+  base_route: entity.activite.canonical
+  title: 'Edit'
+
+entity.activite.delete_form:
+  route_name:  entity.activite.delete_form
+  base_route:  entity.activite.canonical
+  title: Delete
+  weight: 10
+

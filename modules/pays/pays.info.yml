@@ -1,0 +1,5 @@
+name: pays
+type: module
+description: Liste des pays
+core: 8.x
+package: pays

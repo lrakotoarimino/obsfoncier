@@ -1,0 +1,11 @@
+entity.secteur.add_form:
+  route_name: 'entity.secteur.add_page'
+  title: 'Add Secteur'
+  appears_on:
+    - entity.secteur.collection
+entity.secteur_type.add_form:
+  route_name: 'entity.secteur_type.add_form'
+  title: 'Add Secteur type'
+  appears_on:
+    - entity.secteur_type.collection
+

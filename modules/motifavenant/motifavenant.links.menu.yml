@@ -1,0 +1,18 @@
+
+# Motifavenant menu items definition
+entity.motifavenant.collection:
+  title: 'Motifavenant list'
+  route_name: entity.motifavenant.collection
+  description: 'List Motifavenant entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Motifavenant type menu items definition
+entity.motifavenant_type.collection:
+  title: 'Motifavenant type'
+  route_name: entity.motifavenant_type.collection
+  description: 'List Motifavenant type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

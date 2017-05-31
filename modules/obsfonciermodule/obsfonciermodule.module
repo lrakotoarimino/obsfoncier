@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains obsfonciermodule.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_help().
+ */
+function obsfonciermodule_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the obsfonciermodule module.
+    case 'help.page.obsfonciermodule':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module pour Observatoire du Foncier') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * un user doit arrive sur la liste des projets quand il se connecte, sauf la première fois
+ * hook_user_login($account) */
+function obsfonciermodule_user_login($account){
+
+	if (in_array('ministere', \Drupal::currentUser()->getRoles())) {
+        $url_object = \Drupal::service('path.validator')->getUrlIfValid('/liste-des-projets');
+	    $url_object->setAbsolute();
+	    $url = $url_object->toString();
+	    $response = new RedirectResponse($url);
+	    $response->send();
+	}
+
+
+}

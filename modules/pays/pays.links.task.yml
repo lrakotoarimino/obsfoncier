@@ -1,0 +1,18 @@
+# Pays routing definition
+
+entity.pays.canonical:
+  route_name: entity.pays.canonical
+  base_route: entity.pays.canonical
+  title: 'View'
+
+entity.pays.edit_form:
+  route_name: entity.pays.edit_form
+  base_route: entity.pays.canonical
+  title: 'Edit'
+
+entity.pays.delete_form:
+  route_name:  entity.pays.delete_form
+  base_route:  entity.pays.canonical
+  title: Delete
+  weight: 10
+

@@ -1,0 +1,14 @@
+{
+  "name": "drupal/typepermis",
+  "type": "drupal-module",
+  "description": "Ls types de permis miniers et environnementaux",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/typepermis",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/typepermis",
+    "source": "http://cgit.drupalcode.org/typepermis"
+  },
+  "require": { }
+}

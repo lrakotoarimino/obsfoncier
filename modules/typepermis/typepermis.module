@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains typepermis.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function typepermis_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the typepermis module.
+    case 'help.page.typepermis':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Ls types de permis miniers et environnementaux') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function typepermis_theme() {
+  $theme = [];
+  $theme['typepermis'] = [
+    'render element' => 'elements',
+    'file' => 'typepermis.page.inc',
+    'template' => 'typepermis',
+  ];
+  $theme['typepermis_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'typepermis.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function typepermis_theme_suggestions_typepermis(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#typepermis'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'typepermis__' . $sanitized_view_mode;
+  $suggestions[] = 'typepermis__' . $entity->bundle();
+  $suggestions[] = 'typepermis__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'typepermis__' . $entity->id();
+  $suggestions[] = 'typepermis__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

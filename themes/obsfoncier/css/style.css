@@ -1,0 +1,261 @@
+/***********************************/
+/*          APEEE STYLES           */
+/***********************************/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/***********************************/
+/* surchage du fichier /sandstone/bootstrap.css */
+@import 'over-standstone.css';
+/***********************************/
+/* ADAPTATION OF BOOTSTRAP */
+body {
+  margin-top: 0;
+}
+h1,
+.h1 {
+  font-size: 30px;
+}
+.alert-success {
+  background-color: #DADA56;
+  color: #3E3F3A;
+}
+.btn-primary,
+.progress-bar {
+  background-color: #4c6850;
+}
+/* fix padding problem withe input type=file */
+input.form-file.form-control {
+  padding: 0;
+}
+.page-header {
+  padding: 5px;
+  margin: 0;
+  border-bottom: none;
+  color: #EFEFD1;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.region-header {
+  margin-bottom: 15px;
+}
+/* pour avoir les colonnes gauche et droite de la même apparence que les onglets */
+aside.col-sm-3 {
+  padding: 15px;
+  background-color: #f8f5f0;
+  border: 1px #dfd7ca solid;
+  color: #98978b;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+/* alignement des entêtes */
+.header-logo,
+.heading {
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .navbar.container {
+    max-width: 750px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .navbar.container {
+    max-width: 970px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .navbar.container {
+    max-width: 1170px;
+  }
+}
+/***********************************/
+/***********************************/
+/* RESPONSIVE MENU */
+/* superwide screens */
+/*@media all and (min-width: 1400px) {
+  .block-responsive-menu-toggle {
+    display: none;
+  }
+  .region-resp-menu {
+    position: absolute;
+    min-height: 100%;
+    width: 300px;
+    padding: 15px;
+    background: @color-gris-fonce;
+    color: @color-gris-clair;
+    font-size: 1.1em;
+    a {
+      color: @color-vert-logo;
+    }
+    .obsfoncier-horizontal-menu {
+
+    }
+  }
+  .resp-menu-page {
+    margin-left: 320px;
+    max-width: 1170px;
+  }
+}*/
+/* smaller than superwide */
+/*@media all and (max-width: 1399px) {*/
+.region-resp-menu {
+  display: none;
+}
+.region-navigation {
+  position: relative;
+  padding-left: 85px;
+}
+.block-responsive-menu-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  width: auto;
+  background-color: #DADA56;
+  /*border: 1px @color-gris-fonce solid;*/
+  overflow: hidden;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.responsive-menu-toggle-icon {
+  width: 50px;
+  height: 40px;
+}
+.responsive-menu-toggle-icon span.label {
+  display: none;
+}
+.responsive-menu-toggle-icon:before,
+.responsive-menu-toggle-icon:after,
+.responsive-menu-toggle-icon span.icon {
+  background-color: #3E3F3A !important;
+  width: 34px;
+  height: 3px;
+  left: 8px;
+}
+.responsive-menu-toggle-icon:before {
+  top: 10px;
+}
+.responsive-menu-toggle-icon span.icon {
+  top: 18px;
+}
+.responsive-menu-toggle-icon:after {
+  top: 26px;
+}
+.mm-menu.mm-theme-dark {
+  background: #3E3F3A;
+  color: #EFEFD1;
+}
+.mm-menu.mm-theme-dark em.mm-counter,
+.mm-menu.mm-theme-dark .mm-navbar > *,
+.mm-menu.mm-theme-dark .mm-navbar a {
+  font-size: 1.4em;
+  color: #DADA56;
+}
+.mm-menu.mm-theme-dark .mm-btn::after,
+.mm-menu.mm-theme-dark .mm-btn::before,
+.mm-menu.mm-theme-dark .mm-listview > li .mm-next::after {
+  border-color: #DADA56;
+}
+.mm-menu.mm-theme-dark .with-below {
+  color: #DADA56 !important;
+}
+.mm-menu.mm-theme-dark a {
+  color: #DADA56;
+}
+.mm-menu.mm-theme-dark a:hover,
+.mm-menu.mm-theme-dark a:focus {
+  background-color: #9B9895;
+}
+/*}*/
+/***********************************/
+/***********************************/
+/* HEADER : MENU & LOGO */
+.header-logo a {
+  color: #DADA56;
+}
+.navbar {
+  min-height: auto;
+}
+.navbar-default .navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #DADA56;
+}
+.navbar-brand {
+  padding: 25px 0px;
+}
+/***********************************/
+/***********************************/
+/* SELECTEUR DE LANGUE */
+.block-language {
+  float: right;
+}
+.block-language .btn {
+  margin: 15px 15px 5px 5px;
+}
+.block-language .is-active {
+  display: none;
+}
+/***********************************/
+/***********************************/
+/* FOOTER */
+.footer {
+  background-color: #3E3F3A;
+  color: #EFEFD1;
+  font-size: 0.9em;
+}
+.footer a {
+  color: #DADA56;
+}
+/***********************************/
+/***********************************/
+/* inscription */
+#edit-field-coordonnees--wrapper .fieldset-legend {
+  display: none;
+}
+#edit-field-eula-wrapper .fieldset-legend {
+  display: none;
+}
+#user-form #edit-field-coordonnees-wrapper {
+  display: none;
+}
+#user-form #edit-field-eula-wrapper {
+  display: none;
+}
+.user-register-form #edit-field-coordonnees--wrapper legend {
+  display: none;
+}
+div #account-inscription #account-inscription--description {
+  color: #3e3f3a;
+  font-size: 16px;
+}
+div #personnal-data #personnal-data--description {
+  color: #3e3f3a;
+  font-size: 16px;
+}
+/***********************************/
+/***********************************/
+/* champ 'timefield' */
+.form-timefield-content .select-wrapper {
+  width: auto;
+}
+.form-timefield-content .form-type-select {
+  display: inline-block;
+}
+/***********************************/
+/***********************************/
+/* titres dans la colonne de droite */
+.region-sidebar-second h2,
+.region-sidebar-second .h2 {
+  font-size: 18px;
+  color: #3E3F3A;
+}
+.region-sidebar-second ul.menu.nav {
+  margin-left: 15px;
+}
+/***********************************/

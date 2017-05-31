@@ -1,0 +1,14 @@
+{
+  "name": "drupal/motifavenant",
+  "type": "drupal-module",
+  "description": "Les motifs de l'avenant",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/motifavenant",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/motifavenant",
+    "source": "http://cgit.drupalcode.org/motifavenant"
+  },
+  "require": { }
+}

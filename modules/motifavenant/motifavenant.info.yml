@@ -1,0 +1,5 @@
+name: motifavenant
+type: module
+description: Les motifs de l'avenant
+core: 8.x
+package: motifavenant

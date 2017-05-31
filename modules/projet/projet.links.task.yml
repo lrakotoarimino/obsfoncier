@@ -1,0 +1,18 @@
+# Projet routing definition
+
+entity.projet.canonical:
+  route_name: entity.projet.canonical
+  base_route: entity.projet.canonical
+  title: 'View'
+
+entity.projet.edit_form:
+  route_name: entity.projet.edit_form
+  base_route: entity.projet.canonical
+  title: 'Edit'
+
+entity.projet.delete_form:
+  route_name:  entity.projet.delete_form
+  base_route:  entity.projet.canonical
+  title: Delete
+  weight: 10
+

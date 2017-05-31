@@ -1,0 +1,18 @@
+
+# Phase menu items definition
+entity.phase.collection:
+  title: 'Phase list'
+  route_name: entity.phase.collection
+  description: 'List Phase entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Phase type menu items definition
+entity.phase_type.collection:
+  title: 'Phase type'
+  route_name: entity.phase_type.collection
+  description: 'List Phase type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

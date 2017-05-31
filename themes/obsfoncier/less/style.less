@@ -1,0 +1,297 @@
+/***********************************/
+/*          OBSFONCIER STYLES      */
+/***********************************/
+
+// LESS Elements 0.9
+@import 'elements';
+
+@color-gris-fonce: #3E3F3A;
+@color-gris-clair: #EFEFD1;
+@color-vert-logo:  #DADA56;
+@color-bg_survol:  #9B9895;
+@color-bg-primary: #4c6850;
+
+
+/***********************************/
+/* surchage du fichier /sandstone/bootstrap.css */
+@import 'over-standstone.css';
+
+
+
+/***********************************/
+/* ADAPTATION OF BOOTSTRAP */
+body {
+  margin-top: 0;
+}
+h1, .h1 {
+  font-size: 30px;
+}
+.alert-success {
+  background-color: @color-vert-logo;
+  color: @color-gris-fonce;
+}
+.btn-primary,
+.progress-bar {
+  background-color: @color-bg-primary;
+}
+/* fix padding problem withe input type=file */
+input.form-file.form-control {
+  padding: 0;
+}
+.page-header {
+  padding: 5px;
+  margin: 0;
+  border-bottom: none;
+  color: @color-gris-clair;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.region-header {
+  margin-bottom: 15px;
+}
+/* pour avoir les colonnes gauche et droite de la même apparence que les onglets */
+aside.col-sm-3 {
+  padding: 15px;
+  background-color: #f8f5f0;
+  border: 1px #dfd7ca solid;
+  color: #98978b;
+  .rounded(4px);
+}
+/* alignement des entêtes */
+.header-logo,
+.heading {
+  padding: 0;
+}
+@media screen and (min-width:768px){
+  .navbar.container {
+    max-width: 750px;
+  }
+}
+@media screen and (min-width:992px){
+  .navbar.container {
+    max-width: 970px;
+  }
+}
+@media screen and (min-width:1200px){
+  .navbar.container {
+    max-width: 1170px;
+  }
+}
+/***********************************/
+
+
+
+/***********************************/
+/* RESPONSIVE MENU */
+/* superwide screens */
+/*@media all and (min-width: 1400px) {
+  .block-responsive-menu-toggle {
+    display: none;
+  }
+  .region-resp-menu {
+    position: absolute;
+    min-height: 100%;
+    width: 300px;
+    padding: 15px;
+    background: @color-gris-fonce;
+    color: @color-gris-clair;
+    font-size: 1.1em;
+    a {
+      color: @color-vert-logo;
+    }
+    .obsfoncier-horizontal-menu {
+
+    }
+  }
+  .resp-menu-page {
+    margin-left: 320px;
+    max-width: 1170px;
+  }
+}*/
+/* smaller than superwide */
+/*@media all and (max-width: 1399px) {*/
+  .region-resp-menu {
+    display: none;
+  }
+  .region-navigation {
+    position: relative;
+    padding-left: 85px;
+  }
+  .block-responsive-menu-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    width: auto;
+    background-color: @color-vert-logo;
+    /*border: 1px @color-gris-fonce solid;*/
+    overflow: hidden;
+    .rounded(4px);
+  }
+  .responsive-menu-toggle-icon {
+    width: 50px;
+    height: 40px;
+  }
+  .responsive-menu-toggle-icon span.label {
+    display: none;
+  }
+  .responsive-menu-toggle-icon:before,
+  .responsive-menu-toggle-icon:after,
+  .responsive-menu-toggle-icon span.icon {
+    background-color: @color-gris-fonce !important;
+    width: 34px;
+    height: 3px;
+    left: 8px;
+  }
+  .responsive-menu-toggle-icon:before    { top: 10px; }
+  .responsive-menu-toggle-icon span.icon { top: 18px; }
+  .responsive-menu-toggle-icon:after     { top: 26px; }
+
+  .mm-menu.mm-theme-dark {
+    background: @color-gris-fonce;
+    color: @color-gris-clair;
+    em.mm-counter,
+    .mm-navbar > *,
+    .mm-navbar a {
+      font-size: 1.4em;
+      color: @color-vert-logo;
+    }
+    .mm-btn::after,
+    .mm-btn::before,
+    .mm-listview > li .mm-next::after {
+      border-color: @color-vert-logo;
+    }
+    .with-below {
+      color: @color-vert-logo !important;
+    }
+    a {
+      color: @color-vert-logo;
+    }
+    a:hover,
+      a:focus {
+      background-color: @color-bg_survol;
+    }
+  }
+/*}*/
+/***********************************/
+
+
+
+/***********************************/
+/* HEADER : MENU & LOGO */
+.header-logo a {
+  color: @color-vert-logo;
+}
+.navbar {
+  min-height: auto;
+}
+.navbar-default .navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: @color-vert-logo;
+}
+.navbar-brand {
+  padding: 25px 0px;
+}
+/***********************************/
+
+
+/***********************************/
+/* SELECTEUR DE LANGUE */
+.block-language {
+  float: right;
+  .btn {
+    margin: 15px 15px 5px 5px;
+  }
+  .is-active {
+    display: none;
+  }
+}
+/***********************************/
+
+
+/***********************************/
+/* FOOTER */
+.footer {
+  background-color: @color-gris-fonce;
+  color: @color-gris-clair;
+  font-size: 0.9em;
+  a {
+    color: @color-vert-logo;
+  }
+}
+/***********************************/
+
+/***********************************/
+/* inscription */
+#edit-field-coordonnees--wrapper{
+  .fieldset-legend{
+    display: none;
+  }
+}
+#edit-field-eula-wrapper{
+  .fieldset-legend{
+    display: none;
+  }
+}
+#user-form{
+  #edit-field-coordonnees-wrapper{
+    display: none;
+  }
+  #edit-field-eula-wrapper{
+    display: none;
+  }
+
+}
+.user-register-form{
+  #edit-field-coordonnees--wrapper{
+    legend{
+      display: none;
+    }
+  }
+}
+div{
+  #account-inscription{
+    #account-inscription--description{
+      color: #3e3f3a;
+      font-size: 16px;
+    }
+  }
+  #personnal-data{
+    #personnal-data--description{
+      color: #3e3f3a;
+      font-size: 16px;
+    }
+  }
+}
+/***********************************/
+
+
+
+/***********************************/
+/* champ 'timefield' */
+.form-timefield-content {
+    .select-wrapper {
+        width: auto;
+    }
+    .form-type-select {
+        display: inline-block;
+    }
+}
+/***********************************/
+
+
+/***********************************/
+/* titres dans la colonne de droite */
+.region-sidebar-second h2,
+.region-sidebar-second .h2 {
+    font-size: 18px;
+    color: @color-gris-fonce;
+}
+.region-sidebar-second ul.menu.nav {
+    margin-left: 15px;
+}
+/***********************************/
+
+
+

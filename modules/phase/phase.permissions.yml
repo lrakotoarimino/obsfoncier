@@ -1,0 +1,22 @@
+add phase entities:
+  title: 'Create new Phase entities'
+
+administer phase entities:
+  title: 'Administer Phase entities'
+  description: 'Allow to access the administration form to configure Phase entities.'
+  restrict access: true
+
+delete phase entities:
+  title: 'Delete Phase entities'
+
+edit phase entities:
+  title: 'Edit Phase entities'
+
+access phase overview:
+  title: 'Access the Phase overview page'
+
+view published phase entities:
+  title: 'View published Phase entities'
+
+view unpublished phase entities:
+  title: 'View unpublished Phase entities'

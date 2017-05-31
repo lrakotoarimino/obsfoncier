@@ -1,0 +1,22 @@
+{#
+/**
+ * @file motifavenant.html.twig
+ * Default theme implementation to present Motifavenant data.
+ *
+ * This template is used when viewing Motifavenant pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_motifavenant()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('motifavenant') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

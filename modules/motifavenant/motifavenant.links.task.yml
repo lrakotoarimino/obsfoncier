@@ -1,0 +1,18 @@
+# Motifavenant routing definition
+
+entity.motifavenant.canonical:
+  route_name: entity.motifavenant.canonical
+  base_route: entity.motifavenant.canonical
+  title: 'View'
+
+entity.motifavenant.edit_form:
+  route_name: entity.motifavenant.edit_form
+  base_route: entity.motifavenant.canonical
+  title: 'Edit'
+
+entity.motifavenant.delete_form:
+  route_name:  entity.motifavenant.delete_form
+  base_route:  entity.motifavenant.canonical
+  title: Delete
+  weight: 10
+

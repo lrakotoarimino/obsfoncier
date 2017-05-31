@@ -1,0 +1,5 @@
+name: permisminier
+type: module
+description: Saisie des permis miniers
+core: 8.x
+package: permisminier

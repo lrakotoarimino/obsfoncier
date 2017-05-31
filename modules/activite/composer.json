@@ -1,0 +1,14 @@
+{
+  "name": "drupal/activite",
+  "type": "drupal-module",
+  "description": "activite",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/activite",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/activite",
+    "source": "http://cgit.drupalcode.org/activite"
+  },
+  "require": { }
+}

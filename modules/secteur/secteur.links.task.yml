@@ -1,0 +1,18 @@
+# Secteur routing definition
+
+entity.secteur.canonical:
+  route_name: entity.secteur.canonical
+  base_route: entity.secteur.canonical
+  title: 'View'
+
+entity.secteur.edit_form:
+  route_name: entity.secteur.edit_form
+  base_route: entity.secteur.canonical
+  title: 'Edit'
+
+entity.secteur.delete_form:
+  route_name:  entity.secteur.delete_form
+  base_route:  entity.secteur.canonical
+  title: Delete
+  weight: 10
+

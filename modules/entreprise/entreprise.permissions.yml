@@ -1,0 +1,22 @@
+add entreprise entities:
+  title: 'Create new Entreprise entities'
+
+administer entreprise entities:
+  title: 'Administer Entreprise entities'
+  description: 'Allow to access the administration form to configure Entreprise entities.'
+  restrict access: true
+
+delete entreprise entities:
+  title: 'Delete Entreprise entities'
+
+edit entreprise entities:
+  title: 'Edit Entreprise entities'
+
+access entreprise overview:
+  title: 'Access the Entreprise overview page'
+
+view published entreprise entities:
+  title: 'View published Entreprise entities'
+
+view unpublished entreprise entities:
+  title: 'View unpublished Entreprise entities'

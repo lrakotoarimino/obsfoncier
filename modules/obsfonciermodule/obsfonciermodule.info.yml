@@ -1,0 +1,5 @@
+name: obsfonciermodule
+type: module
+description: Module pour Observatoire du Foncier
+core: 8.x
+package: obsfonciermodule

@@ -1,0 +1,5 @@
+name: activite
+type: module
+description: activite
+core: 8.x
+package: activite

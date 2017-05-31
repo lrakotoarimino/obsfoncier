@@ -1,0 +1,14 @@
+{
+  "name": "drupal/obsfonciermodule",
+  "type": "drupal-module",
+  "description": "Module pour Observatoire du Foncier",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/obsfonciermodule",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/obsfonciermodule",
+    "source": "http://cgit.drupalcode.org/obsfonciermodule"
+  },
+  "require": { }
+}

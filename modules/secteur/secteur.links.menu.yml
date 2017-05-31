@@ -1,0 +1,18 @@
+
+# Secteur menu items definition
+entity.secteur.collection:
+  title: 'Secteur list'
+  route_name: entity.secteur.collection
+  description: 'List Secteur entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Secteur type menu items definition
+entity.secteur_type.collection:
+  title: 'Secteur type'
+  route_name: entity.secteur_type.collection
+  description: 'List Secteur type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

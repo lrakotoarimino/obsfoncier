@@ -1,0 +1,18 @@
+
+# Typepermis menu items definition
+entity.typepermis.collection:
+  title: 'Typepermis list'
+  route_name: entity.typepermis.collection
+  description: 'List Typepermis entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Typepermis type menu items definition
+entity.typepermis_type.collection:
+  title: 'Typepermis type'
+  route_name: entity.typepermis_type.collection
+  description: 'List Typepermis type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

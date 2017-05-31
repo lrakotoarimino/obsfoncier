@@ -1,0 +1,18 @@
+
+# Permisminier menu items definition
+entity.permisminier.collection:
+  title: 'Permisminier list'
+  route_name: entity.permisminier.collection
+  description: 'List Permisminier entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Permisminier type menu items definition
+entity.permisminier_type.collection:
+  title: 'Permisminier type'
+  route_name: entity.permisminier_type.collection
+  description: 'List Permisminier type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

@@ -1,0 +1,14 @@
+{
+  "name": "drupal/permisminier",
+  "type": "drupal-module",
+  "description": "Saisie des permis miniers",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/permisminier",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/permisminier",
+    "source": "http://cgit.drupalcode.org/permisminier"
+  },
+  "require": { }
+}

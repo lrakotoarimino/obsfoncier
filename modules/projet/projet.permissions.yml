@@ -1,0 +1,22 @@
+add projet entities:
+  title: 'Create new Projet entities'
+
+administer projet entities:
+  title: 'Administer Projet entities'
+  description: 'Allow to access the administration form to configure Projet entities.'
+  restrict access: true
+
+delete projet entities:
+  title: 'Delete Projet entities'
+
+edit projet entities:
+  title: 'Edit Projet entities'
+
+access projet overview:
+  title: 'Access the Projet overview page'
+
+view published projet entities:
+  title: 'View published Projet entities'
+
+view unpublished projet entities:
+  title: 'View unpublished Projet entities'

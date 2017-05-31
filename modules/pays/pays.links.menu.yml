@@ -1,0 +1,18 @@
+
+# Pays menu items definition
+entity.pays.collection:
+  title: 'Pays list'
+  route_name: entity.pays.collection
+  description: 'List Pays entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Pays type menu items definition
+entity.pays_type.collection:
+  title: 'Pays type'
+  route_name: entity.pays_type.collection
+  description: 'List Pays type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains secteur.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function secteur_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the secteur module.
+    case 'help.page.secteur':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Gestion des secteurs') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function secteur_theme() {
+  $theme = [];
+  $theme['secteur'] = [
+    'render element' => 'elements',
+    'file' => 'secteur.page.inc',
+    'template' => 'secteur',
+  ];
+  $theme['secteur_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'secteur.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function secteur_theme_suggestions_secteur(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#secteur'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'secteur__' . $sanitized_view_mode;
+  $suggestions[] = 'secteur__' . $entity->bundle();
+  $suggestions[] = 'secteur__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'secteur__' . $entity->id();
+  $suggestions[] = 'secteur__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

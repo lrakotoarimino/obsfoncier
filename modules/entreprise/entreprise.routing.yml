@@ -1,0 +1,7 @@
+entreprise_form.form:
+  path: /entreprise/add-entreprise
+  defaults:
+    _title: 'Création entreprise'
+    _form: '\Drupal\entreprise\Form\EntrepriseForm'
+  requirements:
+    _access: 'TRUE'

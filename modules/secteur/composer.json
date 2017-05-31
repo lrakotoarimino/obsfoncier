@@ -1,0 +1,14 @@
+{
+  "name": "drupal/secteur",
+  "type": "drupal-module",
+  "description": "Gestion des secteurs",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/secteur",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/secteur",
+    "source": "http://cgit.drupalcode.org/secteur"
+  },
+  "require": { }
+}

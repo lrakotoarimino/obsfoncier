@@ -1,0 +1,5 @@
+name: typepermis
+type: module
+description: Ls types de permis miniers et environnementaux
+core: 8.x
+package: typepermis

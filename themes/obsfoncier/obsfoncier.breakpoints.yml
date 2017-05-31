@@ -1,0 +1,48 @@
+obsfoncier.screen-xs-max:
+  label: screen-xs-max
+  mediaQuery: 'all and (max-width: 767px)'
+  weight: 1
+  multipliers:
+    - 1x
+obsfoncier.screen-sm-min:
+  label: screen-sm-min
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+obsfoncier.screen-sm-max:
+  label: screen-sm-max
+  mediaQuery: 'all and (max-width: 991px)'
+  weight: 1
+  multipliers:
+    - 1x
+obsfoncier.screen-md-min:
+  label: screen-md-min
+  mediaQuery: 'all and (min-width: 992px)'
+  weight: 1
+  multipliers:
+    - 1x
+obsfoncier.screen-md-max:
+  label: screen-md-max
+  mediaQuery: 'all and (max-width: 1199px)'
+  weight: 1
+  multipliers:
+    - 1x
+obsfoncier.screen-lg-min:
+  label: screen-lg-min
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 1
+  multipliers:
+    - 1x
+obsfoncier.screen-lg-max:
+  label: screen-lg-max
+  mediaQuery: 'all and (max-width: 1399px)'
+  weight: 1
+  multipliers:
+    - 1x
+obsfoncier.screen-superwide-min:
+  label: screen-superwide
+  mediaQuery: 'all and (min-width: 1400px)'
+  weight: 1
+  multipliers:
+    - 1x

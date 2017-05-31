@@ -1,0 +1,16 @@
+/*
+ * "surcharge" du fichier https://bootswatch.com/sandstone/bootstrap.css
+*/
+.form-control::-moz-placeholder,
+.form-control:-ms-input-placeholder,
+.form-control::-webkit-input-placeholder,
+.btn-link[disabled]:hover,
+fieldset[disabled] .btn-link:hover,
+.btn-link[disabled]:focus,
+fieldset[disabled] .btn-link:focus {
+  color: #B6AC9D;
+}
+.control-group .help-inline,
+.help-block {
+  color: #2f210a;
+}

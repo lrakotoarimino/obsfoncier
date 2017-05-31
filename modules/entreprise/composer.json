@@ -1,0 +1,14 @@
+{
+  "name": "drupal/entreprise",
+  "type": "drupal-module",
+  "description": "Gestion des entreprises",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/entreprise",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/entreprise",
+    "source": "http://cgit.drupalcode.org/entreprise"
+  },
+  "require": { }
+}

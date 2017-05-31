@@ -1,0 +1,11 @@
+entity.motifavenant.add_form:
+  route_name: 'entity.motifavenant.add_page'
+  title: 'Add Motifavenant'
+  appears_on:
+    - entity.motifavenant.collection
+entity.motifavenant_type.add_form:
+  route_name: 'entity.motifavenant_type.add_form'
+  title: 'Add Motifavenant type'
+  appears_on:
+    - entity.motifavenant_type.collection
+

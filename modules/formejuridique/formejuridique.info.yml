@@ -1,0 +1,5 @@
+name: formejuridique
+type: module
+description: Liste des formes juridiques
+core: 8.x
+package: formejuridique

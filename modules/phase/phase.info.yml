@@ -1,0 +1,5 @@
+name: phase
+type: module
+description: Gestion des phases
+core: 8.x
+package: phase
