@@ -38,8 +38,15 @@ class ObsFoncierUploadForm extends FormBase {
 		
 		$form['fieldset_upload']['parent'] = array(
 				'#title' => $this->t("Fichier :"),
-				'#type' => 'file',
+				'#type' => 'managed_file',
 				'#required' => true,
+				'#upload_location' => 'public://fichiers_importes/',
+				'#description'          => t('Extensions autorisées : xls xlxs'),
+				'#multiple'             => FALSE,
+				'#upload_validators'    => [
+						'file_validate_extensions'    => array('xls xlsx'),
+						'file_validate_size'          => array(25600000)
+				],
 				
 		);
 		
