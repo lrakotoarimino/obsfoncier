@@ -1,7 +1,7 @@
 <?php
 
 include 'libraries/PHPExcel/IOFactory.php';
-die("ok1");
+
 $server = "localhost";
 $username = "root";
 $password = "root";
