@@ -2,6 +2,7 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+      /vendor/kartik-v/bootstrap-fileinput/css/fileinput.min.css: {}
 bootstrap-scripts:
   js:
     bootstrap/js/affix.js: {}
@@ -16,3 +17,4 @@ bootstrap-scripts:
     bootstrap/js/scrollspy.js: {}
     bootstrap/js/tab.js: {}
     bootstrap/js/transition.js: {}
+    /vendor/kartik-v/bootstrap-fileinput/js/plugins/piexif.min.js: {}
