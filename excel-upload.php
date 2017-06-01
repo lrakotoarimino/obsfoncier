@@ -80,7 +80,7 @@ function import_data_entreprise($data){
 if(isset($_FILES['file']['name'])){
 	
 	$file_name = $_FILES['file']['name'];
-	$path= $_FILES['file']['tmp_name'];die($path);
+	$path= $_FILES['file']['tmp_name'];
 	try {
 		$inputFileType = PHPExcel_IOFactory::identify($path);
 		$objReader = PHPExcel_IOFactory::createReader($inputFileType);
