@@ -46,17 +46,22 @@ use Drupal\user\UserInterface;
  *     "status" = "status",
  *   },
  *   links = {
- *     "canonical" = "/admin/structure/entreprise/{entreprise}",
- *     "add-page" = "/admin/structure/entreprise/add",
- *     "add-form" = "/admin/structure/entreprise/add/{entreprise_type}",
- *     "edit-form" = "/admin/structure/entreprise/{entreprise}/edit",
- *     "delete-form" = "/admin/structure/entreprise/{entreprise}/delete",
- *     "collection" = "/admin/structure/entreprise",
+ *     "canonical" = "/entreprise/{entreprise}",
+ *     "add-page" = "/entreprise/add",
+ *     "add-form" = "/entreprise/add/{entreprise_type}",
+ *     "edit-form" = "/entreprise/{entreprise}/edit",
+ *     "delete-form" = "/entreprise/{entreprise}/delete",
+ *     "collection" = "/entreprise",
  *   },
  *   bundle_entity_type = "entreprise_type",
  *   field_ui_base_route = "entity.entreprise_type.edit_form"
  * )
  */
+//"canonical" = "/admin/structure/entreprise/{entreprise}",
+//"add-page" = "/admin/structure/entreprise/add",
+//*     "add-form" = "/admin/structure/entreprise/add/{entreprise_type}",
+//*     "edit-form" = "/admin/structure/entreprise/{entreprise}/edit",
+//*     
 class Entreprise extends ContentEntityBase implements EntrepriseInterface {
 
   use EntityChangedTrait;
