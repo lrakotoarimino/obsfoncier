@@ -22,14 +22,7 @@ class PermisminierForm extends ContentEntityForm {
     
     $entity = $this->entity;
     
-    $nidEntreprises = \Drupal::entityQuery('entreprise')
-    ->execute();
-    $entreprises = \Drupal::entityTypeManager()->getStorage('entreprise')->loadMultiple($nidEntreprises);
-    foreach ($entreprises as $nid => $entreprise) {
-    	$options[$nid] = $entreprise->get('name')->getValue()['0']['value'];
-    }
-    asort($options);
-    
+    $options = getOptions('entreprise');
     
     $form['entreprise_id'] = array(
     		'#title' => $this->t("Entreprise"),
