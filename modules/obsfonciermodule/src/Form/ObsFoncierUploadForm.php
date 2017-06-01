@@ -36,6 +36,7 @@ class ObsFoncierUploadForm extends FormBase {
 				'#title' => $this->t("Importation des données"),
 		);
 		
+		
 		$form['fieldset_upload']['parent'] = array(
 				'#title' => $this->t("Fichier :"),
 				'#type' => 'managed_file',
@@ -47,9 +48,7 @@ class ObsFoncierUploadForm extends FormBase {
 						'file_validate_extensions'    => array('xls xlsx'),
 						'file_validate_size'          => array(25600000)
 				],
-				
 		);
-		
 		
 		
 		$form['submit'] = array(
