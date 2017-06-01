@@ -145,6 +145,22 @@ class Permisautorisation extends ContentEntityBase implements Permisautorisation
     $this->set('status', $published ? TRUE : FALSE);
     return $this;
   }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getEntrepriseId() {
+  	return $this->get('entreprise_id')->target_id;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setEntrepriseid($entreprise_id) {
+  	$this->set('entreprise_id', $entreprise_id);
+  	return $this;
+  }
+  
 
   /**
    * {@inheritdoc}
@@ -210,6 +226,13 @@ class Permisautorisation extends ContentEntityBase implements Permisautorisation
       ->setLabel(t('Changed'))
       ->setDescription(t('The time that the entity was last edited.'));
 
+      
+    $fields['entreprise_id'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('ID Entreprise'))
+      ->setDescription(t('ID Entreprise.'))
+      ->setSetting('target_type', 'entreprise');
+      
+      
     return $fields;
   }
 

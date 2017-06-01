@@ -37,6 +37,17 @@ function obsfonciermodule_user_login($account){
 	    $response = new RedirectResponse($url);
 	    $response->send();
 	}
-
-
 }
+
+function getOptions($table) {
+
+	$options = array();
+    $nids = \Drupal::entityQuery($table)
+    		->execute();
+    $datas = \Drupal::entityTypeManager()->getStorage($table)->loadMultiple($nids);
+    foreach ($datas as $nid => $data) {
+    	$options[$nid] = $data->get('name')->getValue()['0']['value'];
+    }
+    asort($options);
+    return $options;
+}    

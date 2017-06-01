@@ -20,6 +20,29 @@ class ContratForm extends ContentEntityForm {
     $form = parent::buildForm($form, $form_state);
 
     $entity = $this->entity;
+    
+    $options = getOptions('entreprise');
+    
+    $form['entreprise_id'] = array(
+    		'#title' => $this->t("Entreprise"),
+    		'#type' => 'select',
+    		'#empty_option' => $this->t('--Selectionnez une entreprise--'),
+    		'#options' => $options,
+    		'#required' => true,
+    		'#default_value' => $entity->getEntrepriseId(),
+    );
+    
+    $options = getOptions('motifavenant');
+    $form['phase_id'] = array(
+    		'#title' => $this->t("Motif avenant"),
+    		'#type' => 'select',
+    		'#empty_option' => $this->t("--Selectionnez un motif de l'avenant--"),
+    		'#options' => $options,
+    		'#required' => true,
+    		'#default_value' => $entity->getMotifavenantId(),
+    );
+    
+    
 
     return $form;
   }

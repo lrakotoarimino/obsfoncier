@@ -8,9 +8,9 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Link;
 /**
  * @Block (
- *  id = "VwPermisminier",
+ *  id = "VwPermisautorisation",
  *  admin_label = @Translation("VwPermisautorisation"),
- *  categroy = @Translation("ObsFoncier")
+ *  category = @Translation("entreprise")
  * )
  */
 class VwPermisautorisation extends BlockBase {
@@ -25,16 +25,23 @@ class VwPermisautorisation extends BlockBase {
 					return ['#markup' => '<hr />'];
 				}
 				
-				$vw = views_embed_view('liste_des_permis_autorisation', 'block_1', ac_getParentPrincipalCurrentUser());
-				$renderview = \Drupal::service('renderer')->render($vw);
+		$path = \Drupal::request()->getpathInfo();
+		$arg  = explode('/',$path);
+		
+		if (isset($arg[5]) && $arg[5] != 'edit') {
+			$idEntreprise= intVal($arg[3]);
+		} elseif (isset($arg[4]) && $arg[4] != 'edit') {
+			$idEntreprise= intVal($arg[4]);
+		}
+		
+		$vw = views_embed_view('liste_des_permis_autorisation', 'block_1'(),$idEntreprise);
+		$renderview = \Drupal::service('renderer')->render($vw);
+		
+		
 				
-				$link = '<div class="BtnCommander">'
-						. Link::createFromRoute($this->t('Ajouter un permis autorisation environnemental'), 'adulte_form.form', array('identity' => 'add'), array('attributes' => array('class' => array('btn', 'btn-default'))))->toString()
-						. '</div>';
-						
-						return [
-								'#markup' => $renderview . $link . '<hr />'
-						];
+		return [
+				'#markup' => $renderview . $link . '<hr />'
+		];
 	}
 	
 }
