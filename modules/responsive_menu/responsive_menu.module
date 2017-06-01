@@ -76,7 +76,7 @@ function responsive_menu_preprocess_block(&$variables) {
 function responsive_menu_page_bottom(&$page) {
   // Don't apply this for admin routes.
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
-    return;
+    //return; GSE : je commente sinon le menu n'apparait pas  
   }
 
   // Prepare the output of the off-canvas menu.

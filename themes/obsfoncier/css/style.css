@@ -259,3 +259,7 @@ div #personnal-data #personnal-data--description {
   margin-left: 15px;
 }
 /***********************************/
+
+.nav-tabs > li > a {
+    display: none;
+}

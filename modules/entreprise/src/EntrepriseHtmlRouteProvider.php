@@ -52,7 +52,8 @@ class EntrepriseHtmlRouteProvider extends AdminHtmlRouteProvider {
           '_title' => "{$entity_type->getLabel()} list",
         ])
         ->setRequirement('_permission', 'access entreprise overview')
-        ->setOption('_admin_route', TRUE);
+        ->setOption('_admin_route', TRUE)
+       ;
 
       return $route;
     }
