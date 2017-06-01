@@ -24,9 +24,10 @@ class VwPermisminier extends BlockBase {
 	 */
 	public function build() {
 		// check si le user est un ministere
-		if (!in_array('ministere', \Drupal::currentUser()->getRoles())) {
-			return ['#markup' => '<hr />'];
-		}
+		if (!in_array('ministere', \Drupal::currentUser()->getRoles())
+				&& !in_array('adminfoncier', \Drupal::currentUser()->getRoles()) ) {
+					return ['#markup' => '<hr />'];
+				}
 		
 		$vw = views_embed_view('liste_des_permis_miniers', 'block_1', ac_getParentPrincipalCurrentUser());
 		$renderview = \Drupal::service('renderer')->render($vw);

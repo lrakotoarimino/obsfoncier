@@ -263,3 +263,7 @@ div #personnal-data #personnal-data--description {
 .nav-tabs > li > a {
     display: none;
 }
+/* pour cacher les auteurs dans les tables de liste */
+div#edit-user-id-wrapper {
+    display: none;
+}

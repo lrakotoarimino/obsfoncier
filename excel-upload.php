@@ -12,8 +12,10 @@ $username = "obsfoncier";
 $password = "O1B7SfOnYq2Kl";
 $database = "obsfoncier";
 
-mysql_connect($server, $username, $password);
-mysql_select_db($database);
+//sql_connect($server, $username, $password);
+//mysql_select_db($database);
+$con=mysqli_connect($server, $username, $password,$database);
+
 
 function get_data_par_defaut(){
 	$data = array();
@@ -38,18 +40,18 @@ function gen_uuid() {
 }
 
 function get_reference_id($name,$reference){
-	$id = 0;
+	$id = 0;global $con;
 	if($name){
 		$sql = "select * from ".$reference." where name ='".addslashes($name)."'";
-		$requete = mysql_query($sql) ;
-		while ($donnees = mysql_fetch_array($requete)) {
+		$requete = mysqli_query($con,$sql) ;
+		while ($donnees = mysqli_fetch_array($requete)) {
 			$id = $donnees['id'];
 		}
 		if(!$id){
 			$data = get_data_par_defaut();
 			$data['name'] = addslashes($name);
 			$sql = "INSERT INTO ".$reference."  (type, uuid, langcode, user_id, name, status, created, changed) VALUES ('".$data['type']."','".$data['uuid']."','".$data['langcode']."','".$data['user_id']."','".$data['name']."','".$data['status']."','".$data['created']."','".$data['changed']."')";
-			mysql_query($sql) ;
+			mysqli_query($con,$sql) ;
 			$id = mysql_insert_id();
 		}
 	}
@@ -57,9 +59,10 @@ function get_reference_id($name,$reference){
 }
 
 function import_data_entreprise($data){
+	global $con;
 	$sql = "select * from entreprise where cd_projet ='".$data['cd_projet']."'";
-	$requete = mysql_query($sql) ;$id = 0;
-	while ($donnees = mysql_fetch_array($requete)) {
+	$requete = mysqli_query($con,$sql) ;$id = 0;
+	while ($donnees = mysqli_fetch_array($requete)) {
 		$id = $donnees['id'];
 	}
 	if(!$id)
@@ -77,7 +80,7 @@ function import_data_entreprise($data){
 if(isset($_FILES['file']['name'])){
 	
 	$file_name = $_FILES['file']['name'];
-	$path= $_FILES['file']['tmp_name'];die($path);
+	$path= $_FILES['file']['tmp_name'];
 	try {
 		$inputFileType = PHPExcel_IOFactory::identify($path);
 		$objReader = PHPExcel_IOFactory::createReader($inputFileType);
