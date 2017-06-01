@@ -4,7 +4,7 @@ include 'libraries/PHPExcel/IOFactory.php';
 
 $server = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $database = "obsfoncier";
 
 mysql_connect($server, $username, $password);
