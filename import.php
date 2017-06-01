@@ -2,7 +2,7 @@
 
 <form enctype="multipart/form-data" action="excel-upload.php" method="post" >
 
-<label class="form-label span3" for="file">File</label>
+<label class="form-label span3" for="file">Fichier</label>
 <input type="file" name="file" id="file" required />
 
 
