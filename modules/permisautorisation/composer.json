@@ -1,0 +1,14 @@
+{
+  "name": "drupal/permisautorisation",
+  "type": "drupal-module",
+  "description": "Gestion des permis autor environ",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/permisautorisation",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/permisautorisation",
+    "source": "http://cgit.drupalcode.org/permisautorisation"
+  },
+  "require": { }
+}
