@@ -764,7 +764,7 @@ $settings['file_scan_ignore_directories'] = [
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'obs_foncier',
+  'database' => 'obsfoncier_2017060',
   'username' => 'root',
   'password' => 'root',
   'prefix' => '',
