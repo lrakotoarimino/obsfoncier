@@ -12,8 +12,9 @@ $username = "obsfoncier";
 $password = "O1B7SfOnYq2Kl";
 $database = "obsfoncier";
 
-mysql_connect($server, $username, $password);
-mysql_select_db($database);
+//sql_connect($server, $username, $password);
+//mysql_select_db($database);
+$con=mysqli_connect($server, $username, $password,$database);
 die("ok");
 
 function get_data_par_defaut(){
