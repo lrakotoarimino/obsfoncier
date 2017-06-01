@@ -4,7 +4,7 @@ include 'libraries/PHPExcel/IOFactory.php';
 
 $server = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $database = "obsfoncier";
 
 mysql_connect($server, $username, $password);
@@ -72,7 +72,7 @@ function import_data_entreprise($data){
 if(isset($_FILES['file']['name'])){
 	
 	$file_name = $_FILES['file']['name'];
-	$path= $_FILES['file']['tmp_name'];
+	$path= $_FILES['file']['tmp_name'];die($path);
 	try {
 		$inputFileType = PHPExcel_IOFactory::identify($path);
 		$objReader = PHPExcel_IOFactory::createReader($inputFileType);
