@@ -14,6 +14,7 @@ $database = "obsfoncier";
 
 mysql_connect($server, $username, $password);
 mysql_select_db($database);
+die("ok");
 
 function get_data_par_defaut(){
 	$data = array();
