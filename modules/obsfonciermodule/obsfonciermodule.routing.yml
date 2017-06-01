@@ -1,0 +1,7 @@
+obsfonciermodule_upload_form.form:
+  path: /obsfoncier/upload_form
+  defaults:
+    _title: 'Upload du fichier xls des données'
+    _form: '\Drupal\obsfonciermodule\Form\ObsFoncierUploadForm'
+  requirements:
+    _access: 'TRUE'
