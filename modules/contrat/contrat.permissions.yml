@@ -1,0 +1,22 @@
+add contrat entities:
+  title: 'Create new Contrat entities'
+
+administer contrat entities:
+  title: 'Administer Contrat entities'
+  description: 'Allow to access the administration form to configure Contrat entities.'
+  restrict access: true
+
+delete contrat entities:
+  title: 'Delete Contrat entities'
+
+edit contrat entities:
+  title: 'Edit Contrat entities'
+
+access contrat overview:
+  title: 'Access the Contrat overview page'
+
+view published contrat entities:
+  title: 'View published Contrat entities'
+
+view unpublished contrat entities:
+  title: 'View unpublished Contrat entities'

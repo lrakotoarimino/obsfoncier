@@ -1,0 +1,22 @@
+add permisautorisation entities:
+  title: 'Create new Permisautorisation entities'
+
+administer permisautorisation entities:
+  title: 'Administer Permisautorisation entities'
+  description: 'Allow to access the administration form to configure Permisautorisation entities.'
+  restrict access: true
+
+delete permisautorisation entities:
+  title: 'Delete Permisautorisation entities'
+
+edit permisautorisation entities:
+  title: 'Edit Permisautorisation entities'
+
+access permisautorisation overview:
+  title: 'Access the Permisautorisation overview page'
+
+view published permisautorisation entities:
+  title: 'View published Permisautorisation entities'
+
+view unpublished permisautorisation entities:
+  title: 'View unpublished Permisautorisation entities'

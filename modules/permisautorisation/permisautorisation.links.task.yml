@@ -1,0 +1,18 @@
+# Permisautorisation routing definition
+
+entity.permisautorisation.canonical:
+  route_name: entity.permisautorisation.canonical
+  base_route: entity.permisautorisation.canonical
+  title: 'View'
+
+entity.permisautorisation.edit_form:
+  route_name: entity.permisautorisation.edit_form
+  base_route: entity.permisautorisation.canonical
+  title: 'Edit'
+
+entity.permisautorisation.delete_form:
+  route_name:  entity.permisautorisation.delete_form
+  base_route:  entity.permisautorisation.canonical
+  title: Delete
+  weight: 10
+

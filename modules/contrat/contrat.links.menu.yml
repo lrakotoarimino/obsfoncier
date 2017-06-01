@@ -1,0 +1,18 @@
+
+# Contrat menu items definition
+entity.contrat.collection:
+  title: 'Contrat list'
+  route_name: entity.contrat.collection
+  description: 'List Contrat entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Contrat type menu items definition
+entity.contrat_type.collection:
+  title: 'Contrat type'
+  route_name: entity.contrat_type.collection
+  description: 'List Contrat type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

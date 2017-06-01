@@ -1,0 +1,18 @@
+# Contrat routing definition
+
+entity.contrat.canonical:
+  route_name: entity.contrat.canonical
+  base_route: entity.contrat.canonical
+  title: 'View'
+
+entity.contrat.edit_form:
+  route_name: entity.contrat.edit_form
+  base_route: entity.contrat.canonical
+  title: 'Edit'
+
+entity.contrat.delete_form:
+  route_name:  entity.contrat.delete_form
+  base_route:  entity.contrat.canonical
+  title: Delete
+  weight: 10
+

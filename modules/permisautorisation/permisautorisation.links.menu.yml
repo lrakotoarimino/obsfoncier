@@ -1,0 +1,18 @@
+
+# Permisautorisation menu items definition
+entity.permisautorisation.collection:
+  title: 'Permisautorisation list'
+  route_name: entity.permisautorisation.collection
+  description: 'List Permisautorisation entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Permisautorisation type menu items definition
+entity.permisautorisation_type.collection:
+  title: 'Permisautorisation type'
+  route_name: entity.permisautorisation_type.collection
+  description: 'List Permisautorisation type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

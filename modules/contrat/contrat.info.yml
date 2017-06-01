@@ -1,0 +1,5 @@
+name: contrat
+type: module
+description: Gestion des contrats
+core: 8.x
+package: contrat

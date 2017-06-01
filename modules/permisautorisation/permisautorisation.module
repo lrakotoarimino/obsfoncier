@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains permisautorisation.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function permisautorisation_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the permisautorisation module.
+    case 'help.page.permisautorisation':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Gestion des permis autor environ') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function permisautorisation_theme() {
+  $theme = [];
+  $theme['permisautorisation'] = [
+    'render element' => 'elements',
+    'file' => 'permisautorisation.page.inc',
+    'template' => 'permisautorisation',
+  ];
+  $theme['permisautorisation_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'permisautorisation.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function permisautorisation_theme_suggestions_permisautorisation(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#permisautorisation'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'permisautorisation__' . $sanitized_view_mode;
+  $suggestions[] = 'permisautorisation__' . $entity->bundle();
+  $suggestions[] = 'permisautorisation__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'permisautorisation__' . $entity->id();
+  $suggestions[] = 'permisautorisation__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

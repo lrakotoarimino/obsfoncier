@@ -1,0 +1,11 @@
+entity.contrat.add_form:
+  route_name: 'entity.contrat.add_page'
+  title: 'Add Contrat'
+  appears_on:
+    - entity.contrat.collection
+entity.contrat_type.add_form:
+  route_name: 'entity.contrat_type.add_form'
+  title: 'Add Contrat type'
+  appears_on:
+    - entity.contrat_type.collection
+

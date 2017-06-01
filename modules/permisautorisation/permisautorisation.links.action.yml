@@ -1,0 +1,11 @@
+entity.permisautorisation.add_form:
+  route_name: 'entity.permisautorisation.add_page'
+  title: 'Add Permisautorisation'
+  appears_on:
+    - entity.permisautorisation.collection
+entity.permisautorisation_type.add_form:
+  route_name: 'entity.permisautorisation_type.add_form'
+  title: 'Add Permisautorisation type'
+  appears_on:
+    - entity.permisautorisation_type.collection
+

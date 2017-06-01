@@ -1,0 +1,5 @@
+name: permisautorisation
+type: module
+description: Gestion des permis autor environ
+core: 8.x
+package: permisautorisation

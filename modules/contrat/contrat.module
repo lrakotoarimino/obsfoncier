@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains contrat.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function contrat_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the contrat module.
+    case 'help.page.contrat':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Gestion des contrats') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function contrat_theme() {
+  $theme = [];
+  $theme['contrat'] = [
+    'render element' => 'elements',
+    'file' => 'contrat.page.inc',
+    'template' => 'contrat',
+  ];
+  $theme['contrat_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'contrat.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function contrat_theme_suggestions_contrat(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#contrat'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'contrat__' . $sanitized_view_mode;
+  $suggestions[] = 'contrat__' . $entity->bundle();
+  $suggestions[] = 'contrat__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'contrat__' . $entity->id();
+  $suggestions[] = 'contrat__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
