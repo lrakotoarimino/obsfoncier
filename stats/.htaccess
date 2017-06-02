@@ -1,0 +1,7 @@
+AuthName "obsfoncier.ingenosya.eu statistics"
+AuthType Basic
+AuthUserFile /home/obsfoncier/.stats-htpasswd
+require valid-user
+<Files .stats-htpasswd>
+deny from all
+</Files>
