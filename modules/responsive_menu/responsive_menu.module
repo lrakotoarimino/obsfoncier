@@ -86,6 +86,7 @@ function responsive_menu_page_bottom(&$page) {
     '#pre_render' => array('responsive_menu_off_canvas_pre_render'),
   );
 
+
   // Get the configuration.
   $config = \Drupal::config('responsive_menu.settings');
 
