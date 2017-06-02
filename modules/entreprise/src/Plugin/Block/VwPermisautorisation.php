@@ -34,7 +34,7 @@ class VwPermisautorisation extends BlockBase {
 			$idEntreprise= intVal($arg[4]);
 		}
 		
-		$vw = views_embed_view('liste_des_permis_autorisation', 'block_1'(),$idEntreprise);
+		$vw = views_embed_view('liste_des_permis_autorisation', 'block_1',$idEntreprise);
 		$renderview = \Drupal::service('renderer')->render($vw);
 		
 		
