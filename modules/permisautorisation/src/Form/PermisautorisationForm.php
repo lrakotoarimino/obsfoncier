@@ -21,10 +21,17 @@ class PermisautorisationForm extends ContentEntityForm {
 
     $entity = $this->entity;
 
-    $fields['entreprise_id'] = BaseFieldDefinition::create('entity_reference')
-    ->setLabel(t('ID Entreprise'))
-    ->setDescription(t('ID Entreprise.'))
-    ->setSetting('target_type', 'entreprise');
+    $options = getOptions('entreprise');
+    
+    $form['entreprise_id'] = array(
+    		'#title' => $this->t("Entreprise"),
+    		'#type' => 'select',
+    		'#empty_option' => $this->t('--Selectionnez une entreprise--'),
+    		'#options' => $options,
+    		'#required' => true,
+    		'#default_value' => $entity->getEntrepriseId(),
+    );
+    
     
     return $form;
   }
