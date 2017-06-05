@@ -101,6 +101,14 @@ class ObsFoncierUploadForm extends FormBase {
 		$nbProjet = readFile($fid, 'insere');
 		
 		drupal_set_message($nbProjet . " projets ont été importés ou mis à jour");
+		
+		db_delete('cache_data')
+		->execute();
+		db_delete('cache_entity')
+		->execute();
+		db_delete('cache_render')
+		->execute();
+		
 		return false;
 		
 		/*$url = Url::fromRoute('inscription_casier_form.form');
