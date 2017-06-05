@@ -38,7 +38,7 @@ class PermisminierForm extends ContentEntityForm {
     
     $form['entreprise_id'] = array(
     		'#title' => $this->t("Entreprise"),
-    		'#type' => 'select',
+    		'#type' => 'hidden',
     		'#empty_option' => $this->t('--Selectionnez une entreprise--'),
     		'#options' => $options,
     		'#required' => true,

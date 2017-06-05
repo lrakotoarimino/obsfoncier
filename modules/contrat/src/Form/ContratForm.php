@@ -44,7 +44,7 @@ class ContratForm extends ContentEntityForm {
     );
     
     $options = getOptions('motifavenant');
-    $form['phase_id'] = array(
+    $form['motifavenant_id'] = array(
     		'#title' => $this->t("Motif avenant"),
     		'#type' => 'select',
     		'#empty_option' => $this->t("--Selectionnez un motif de l'avenant--"),

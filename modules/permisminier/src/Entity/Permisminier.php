@@ -48,7 +48,7 @@ use Drupal\user\UserInterface;
  *   links = {
  *     "canonical" = "/admin/structure/permisminier/{permisminier}",
  *     "add-page" = "/admin/structure/permisminier/add",
- *     "add-form" = "/admin/structure/permisminier/add/{permisminier_type}",
+ *     "add-form" = "/admin/structure/permisminier/add/{permisminier_type}/{entreprise_id}",
  *     "edit-form" = "/admin/structure/permisminier/{permisminier}/edit",
  *     "delete-form" = "/admin/structure/permisminier/{permisminier}/delete",
  *     "collection" = "/admin/structure/permisminier",

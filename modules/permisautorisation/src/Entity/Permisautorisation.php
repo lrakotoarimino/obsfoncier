@@ -48,7 +48,7 @@ use Drupal\user\UserInterface;
  *   links = {
  *     "canonical" = "/admin/structure/permisautorisation/{permisautorisation}",
  *     "add-page" = "/admin/structure/permisautorisation/add",
- *     "add-form" = "/admin/structure/permisautorisation/add/{permisautorisation_type}",
+ *     "add-form" = "/admin/structure/permisautorisation/add/{permisautorisation_type}/{entreprise_id}",
  *     "edit-form" = "/admin/structure/permisautorisation/{permisautorisation}/edit",
  *     "delete-form" = "/admin/structure/permisautorisation/{permisautorisation}/delete",
  *     "collection" = "/admin/structure/permisautorisation",

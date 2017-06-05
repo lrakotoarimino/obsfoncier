@@ -34,11 +34,11 @@ class VwPermisminier extends BlockBase {
 		$arg  = explode('/',$path);
 		
 		if (isset($arg[5]) && $arg[5] != 'edit') {
-			$idEntreprise= intVal($arg[3]);
+			$idEntreprise = intVal($arg[3]);
 		} elseif (isset($arg[4]) && $arg[4] != 'edit') {
-			$idEntreprise= intVal($arg[4]);
+			$idEntreprise = intVal($arg[4]);
 		}
-		
+		//var_dump($idEntreprise);die();
 		
 		$vw = views_embed_view('liste_des_permis_miniers', 'block_1',$idEntreprise);
 		$renderview = \Drupal::service('renderer')->render($vw);

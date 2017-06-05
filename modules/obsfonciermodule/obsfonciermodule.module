@@ -8,6 +8,7 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_help().
@@ -50,4 +51,42 @@ function getOptions($table) {
     }
     asort($options);
     return $options;
-}    
+}  
+
+function obsfonciermodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+	
+	
+	if (in_array($form_id, array('entreprise_type1_edit_form', 'entreprise_type1_add_form'))) {
+		//Supprime le bouton de suppression dans les form
+		unset($form['actions']['delete']);
+		
+		//On appelle la fonction qui fera la redirection
+		$form['actions']['submit']['#submit'][] = 'obsfonciermodule_liste_entreprise';
+		}
+	
+	if (in_array($form_id, array('permisminier_type1_add_form', 'permisminier_type1_edit_form', 
+		'permisautorisation_type1_add_form', 'permisautorisation_type1_edit_form',
+		'contrat_type1_add_form', 'contrat_type1_edit_form'))) {
+		
+		//Supprime le bouton de suppression dans les form
+		unset($form['actions']['delete']);
+		
+		//On appelle la fonction qui fera la redirection
+		$form['actions']['submit']['#submit'][] = 'obsfonciermodule_edit_entreprise';
+		  
+		}
+}  
+
+function obsfonciermodule_liste_entreprise(array &$form, FormStateInterface $form_state) {
+	//On redirige vers la liste des entreprises
+	$form_state->setRedirect('obsfonciermodule.liste_entreprise');
+}
+
+
+function obsfonciermodule_edit_entreprise(array &$form, FormStateInterface $form_state) {
+	//On redirige vers l'entreprise/projet en édition
+	$values = $form_state->getValues();
+	$option = array('entreprise' => $values['entreprise_id']);
+	$form_state->setRedirect('obsfonciermodule.edit_entreprise', $option);
+}

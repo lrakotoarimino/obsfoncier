@@ -5,3 +5,18 @@ obsfonciermodule_upload_form.form:
     _form: '\Drupal\obsfonciermodule\Form\ObsFoncierUploadForm'
   requirements:
     _access: 'TRUE'
+
+obsfonciermodule.edit_entreprise:
+  path: /admin/structure/entreprise/{entreprise}/edit
+  defaults:
+    _title: 'Edition entreprise'
+    _form: '\Drupal\entreprise\Form\EntrepriseForm'
+  requirements:
+    _access: 'TRUE'
+
+obsfonciermodule.liste_entreprise:
+  path: '/liste-des-projets'
+  defaults:
+     _entity_view: 'liste_des_projets'
+  requirements:
+     _access: 'TRUE'  
