@@ -138,6 +138,12 @@ class EntrepriseForm extends ContentEntityForm {
     //On cache l'auteur
     $form['user_id']['#access'] = FALSE;
     
+    $form['actions']['back']= array(
+    		'#type' => 'button',
+    		'#value' => $this->t("Retour"),
+    		'#weight' => 10, 
+    		'#attributes' => array('onclick' => 'window.history.back();return false;',),
+    );
    
 
     return $form;

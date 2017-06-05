@@ -48,7 +48,7 @@ use Drupal\user\UserInterface;
  *   links = {
  *     "canonical" = "/admin/structure/contrat/{contrat}",
  *     "add-page" = "/admin/structure/contrat/add",
- *     "add-form" = "/admin/structure/contrat/add/{contrat_type}",
+ *     "add-form" = "/admin/structure/contrat/add/{contrat_type}/{entreprise_id}",
  *     "edit-form" = "/admin/structure/contrat/{contrat}/edit",
  *     "delete-form" = "/admin/structure/contrat/{contrat}/delete",
  *     "collection" = "/admin/structure/contrat",

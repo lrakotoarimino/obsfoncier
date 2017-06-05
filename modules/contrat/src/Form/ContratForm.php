@@ -15,21 +15,32 @@ class ContratForm extends ContentEntityForm {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+	public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var $entity \Drupal\contrat\Entity\Contrat */
     $form = parent::buildForm($form, $form_state);
-
     $entity = $this->entity;
+   
+    $path = \Drupal::request()->getpathInfo();
+    $arg  = explode('/',$path);
+    $entrepriseId = 0;
+    if ($arg[4]=='add' && isset($arg[6])) {
+    	$entrepriseId = ($arg[6]);
+    	
+    } 
+    if ($arg[5]=='edit') {
+    	$entrepriseId = $entity->getEntrepriseId();
+    } 
+    $entrepriseId = intVal($entrepriseId);
     
     $options = getOptions('entreprise');
     
     $form['entreprise_id'] = array(
     		'#title' => $this->t("Entreprise"),
-    		'#type' => 'select',
+    		'#type' => 'hidden',
     		'#empty_option' => $this->t('--Selectionnez une entreprise--'),
     		'#options' => $options,
     		'#required' => true,
-    		'#default_value' => $entity->getEntrepriseId(),
+    		'#default_value' => $entrepriseId,
     );
     
     $options = getOptions('motifavenant');
@@ -43,6 +54,12 @@ class ContratForm extends ContentEntityForm {
     );
     
     
+    $form['actions']['back']= array(
+    		'#type' => 'button',
+    		'#value' => $this->t("Retour"),
+    		'#weight' => 10,
+    		'#attributes' => array('onclick' => 'window.history.back();return false;',),
+    );
 
     return $form;
   }

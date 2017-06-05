@@ -24,13 +24,25 @@ class PermisminierForm extends ContentEntityForm {
     
     $options = getOptions('entreprise');
     
+    $path = \Drupal::request()->getpathInfo();
+    $arg  = explode('/',$path);
+    $entrepriseId = 0;
+    if ($arg[4]=='add' && isset($arg[6])) {
+    	$entrepriseId = ($arg[6]);
+    	
+    }
+    if ($arg[5]=='edit') {
+    	$entrepriseId = $entity->getEntrepriseId();
+    }
+    $entrepriseId = intVal($entrepriseId);
+    
     $form['entreprise_id'] = array(
     		'#title' => $this->t("Entreprise"),
     		'#type' => 'select',
     		'#empty_option' => $this->t('--Selectionnez une entreprise--'),
     		'#options' => $options,
     		'#required' => true,
-    		'#default_value' => $entity->getEntrepriseId(),
+    		'#default_value' => $entrepriseId,
     );
     
     $form['num_permis'] = array(
@@ -76,6 +88,13 @@ class PermisminierForm extends ContentEntityForm {
     
     //On cache le nom
     $form['name']['#access'] = FALSE;
+    
+    $form['actions']['back']= array(
+    		'#type' => 'button',
+    		'#value' => $this->t("Retour"),
+    		'#weight' => 10,
+    		'#attributes' => array('onclick' => 'window.history.back();return false;',),
+    );
 
     return $form;
   }
