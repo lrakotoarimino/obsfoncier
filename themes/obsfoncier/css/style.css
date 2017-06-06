@@ -267,3 +267,7 @@ div #personnal-data #personnal-data--description {
 div#edit-user-id-wrapper {
     display: none;
 }
+
+a.name.navbar-brand {
+    display: none;
+}
