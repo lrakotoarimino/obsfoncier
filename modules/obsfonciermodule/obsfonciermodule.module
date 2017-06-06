@@ -93,8 +93,8 @@ function obsfonciermodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
 function obsfonciermodule_liste_entreprise(array &$form, FormStateInterface $form_state) {
 	//On redirige vers la liste des entreprises
 	$values = $form_state->getValues();
-	$_SESSION['mail']['entreprise_id'] = $values['entreprise_id'];
-	send_mail($_SESSION['mail']['type'], $values['entreprise_id']);
+	
+	send_mail($_SESSION['mail']['type'], $values['id']);
 	unset($_SESSION['mail']['type']);
 	$form_state->setRedirect('obsfonciermodule.liste_entreprise');
 }

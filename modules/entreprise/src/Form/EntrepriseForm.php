@@ -27,6 +27,11 @@ class EntrepriseForm extends ContentEntityForm {
     		'#default_value' => $entity->getCdEntreprise(),
     );*/
     
+    
+    $form['entreprise_id'] = array(
+    		'#type' => 'hidden',
+    );
+    
     $form['adresse'] = array(
     		'#title' => $this->t("Contact et adresse de l'entreprise"),
     		'#type' => 'textfield',
@@ -154,9 +159,12 @@ class EntrepriseForm extends ContentEntityForm {
    */
   public function save(array $form, FormStateInterface $form_state) {
     $entity = &$this->entity;
-
+    
     $status = parent::save($form, $form_state);
-
+    $id = $entity->id(); //Id du projet/entreprise
+    $form_state->setValue('id', $id); //On force, surtout pour la creation
+    
+    
     switch ($status) {
       case SAVED_NEW:
         drupal_set_message($this->t('Created the %label Entreprise.', [
