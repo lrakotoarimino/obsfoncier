@@ -63,6 +63,11 @@ function obsfonciermodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
 		
 		//On appelle la fonction qui fera la redirection
 		$form['actions']['submit']['#submit'][] = 'obsfonciermodule_liste_entreprise';
+		
+		if ($form_id == 'entreprise_type1_edit_form') $_SESSION['mail']['type'] = 'projet_add';
+		if ($form_id == 'entreprise_type1_add_form') $_SESSION['mail']['type'] = 'projet_maj';
+		
+		
 		}
 	
 	if (in_array($form_id, array('permisminier_type1_add_form', 'permisminier_type1_edit_form', 
@@ -72,6 +77,13 @@ function obsfonciermodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
 		//Supprime le bouton de suppression dans les form
 		unset($form['actions']['delete']);
 		
+		if ($form_id == 'permisminier_type1_add_form') $_SESSION['mail']['type'] = 'permisminier_add';
+		if ($form_id == 'permisminier_type1_edit_form') $_SESSION['mail']['type'] = 'permisminier_maj';
+		if ($form_id == 'permisautorisation_type1_add_form') $_SESSION['mail']['type'] = 'permisautorisation_add';
+		if ($form_id == 'permisautorisation_type1_edit_form') $_SESSION['mail']['type'] = 'permisautorisation_maj';
+		if ($form_id == 'contrat_type1_add_form') $_SESSION['mail']['type'] = 'contrat_add';
+		if ($form_id == 'contrat_type1_edit_form') $_SESSION['mail']['type'] = 'contrat_maj';
+		
 		//On appelle la fonction qui fera la redirection
 		$form['actions']['submit']['#submit'][] = 'obsfonciermodule_edit_entreprise';
 		  
@@ -80,8 +92,10 @@ function obsfonciermodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
 
 function obsfonciermodule_liste_entreprise(array &$form, FormStateInterface $form_state) {
 	//On redirige vers la liste des entreprises
-	$type = "projet_maj";
-	send_mail($type);
+	$values = $form_state->getValues();
+	$_SESSION['mail']['entreprise_id'] = $values['entreprise_id'];
+	send_mail($_SESSION['mail']['type'], $values['entreprise_id']);
+	unset($_SESSION['mail']['type']);
 	$form_state->setRedirect('obsfonciermodule.liste_entreprise');
 }
 
@@ -91,11 +105,12 @@ function obsfonciermodule_edit_entreprise(array &$form, FormStateInterface $form
 	$values = $form_state->getValues();
 	$option = array('entreprise' => $values['entreprise_id']);
 	$type = "contrat_maj";
-	send_mail($type);
+	send_mail($_SESSION['mail']['type'], $values['entreprise_id']);
+	unset($_SESSION['mail']['type']);
 	$form_state->setRedirect('obsfonciermodule.edit_entreprise', $option);
 }
 
-function send_mail($type) {
+function send_mail($type, $entreprise_id) {
 	//A chaque update ou create, on va envoyer un email au responsable de l'obs du foncier
 	
 	
@@ -144,16 +159,55 @@ function send_mail($type) {
 	 $userConnected = $user->getDisplayName();
 	 $emailConnected = $user->getEmail();
 	 $msgUser = "Utilisateur responsable de la modification : ".$userConnected." (".$emailConnected.")";
-	 
+	 $msgFin = "Vous pouvez consulter les informations en vous connectant sur le site internet.";
+	 $msgFin .= "<br>Cet email est généré automatiquement, merci de ne pas y répondre.";
 	  	
-	 $message = [
+	  	
+	 $site_config = $this->configFactory->get('system.site');
+	 $site_mail = $site_config->get('mail');
+	 if (empty($site_mail)) {
+	    $site_mail = ini_get('sendmail_from');
+	 }
+	  	
+	 $headers = array(
+	    'MIME-Version' => '1.0',
+	    'Content-Type' => 'text/plain; charset=UTF-8; format=flowed; delsp=yes',
+	    'Content-Transfer-Encoding' => '8Bit',
+	    'X-Mailer' => 'Drupal',
+	 );
+	 // To prevent email from looking like spam, the addresses in the Sender and
+	 // Return-Path headers should have a domain authorized to use the
+	 // originating SMTP server.
+	 $headers['Sender'] = $headers['Return-Path'] = $site_mail;
+	 $headers['From'] = $site_config->get('name') . ' <' . $site_mail . '>';
+	 if ($reply) {
+	    $headers['Reply-to'] = $reply;
+	 }
+	 $message['headers'] = $headers;
+	  
+	 /*$message = [
         'id' => 'drupal_mail_obsfoncier' ,
-        'headers' => ['Content-type' => 'text/html; charset=UTF-8; format=flowed; delsp=yes'],
+        //'headers' => ['Content-type' => 'text/html; charset=UTF-8; format=flowed; delsp=yes'],
+        'headers' => $headers,
         'subject' => $subject,
         'from' => $from,
         'to' => $to,
-        'body' => "Bonjour<br><br>".$msg."<br><br>".$msgUser ,
-      ];
+        'body' => "Bonjour<br><br>".$msg."<br><br>".$msgUser."<br><br>".$msgFin ,
+      ];*/
+      
+      $message = array(
+	    'id' => 'obsfonciermodule_sendmail',
+	    'module' => 'obsfonciermodule',
+	    'key' => $key,
+	    'to' => $to,
+	    'from' => $site_mail,
+	    'reply-to' => $reply,
+	    'send' => TRUE,
+	    'subject' =>  $subject,
+	    'body' => "Bonjour<br><br>".$msg."<br><br>".$msgUser."<br><br>".$msgFin ,
+	  );
+      
+	  
       $result = $mailManager->getInstance(['module' => $module, 'key' => $key])->mail($message);
 	
 	 
