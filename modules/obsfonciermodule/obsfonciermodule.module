@@ -121,9 +121,9 @@ function send_mail($type) {
 	 $message = [
         'id' => 'drupal_mail_test_1' ,
         'headers' => ['Content-type' => 'text/html'],
-        'subject' => $this->randomString(64),
+        'subject' => "mon sujet",
         'to' => $to,
-        'body' => $this->randomString(512),
+        'body' => "mon body",
       ];
       $mailManager->getInstance(['module' => $module, 'key' => $key])->mail($message);
 	 
