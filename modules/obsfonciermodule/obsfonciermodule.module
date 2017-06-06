@@ -155,7 +155,8 @@ function send_mail($type) {
         'body' => "Bonjour<br><br>".$msg."<br><br>".$msgUser ,
       ];
       $result = $mailManager->getInstance(['module' => $module, 'key' => $key])->mail($message);
-	 
+	var_dump($message);
+	 kint($result);die();
 	 
 	 if ($result['result'] != true) {
 	    $message = t("Il y a eu un problème en envoyant l'email à @email.", array('@email' => $to));
