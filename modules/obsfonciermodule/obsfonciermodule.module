@@ -80,7 +80,8 @@ function obsfonciermodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
 
 function obsfonciermodule_liste_entreprise(array &$form, FormStateInterface $form_state) {
 	//On redirige vers la liste des entreprises
-	send_mail('test');
+	$type = "projet_maj";
+	send_mail($type);
 	$form_state->setRedirect('obsfonciermodule.liste_entreprise');
 }
 
@@ -89,7 +90,8 @@ function obsfonciermodule_edit_entreprise(array &$form, FormStateInterface $form
 	//On redirige vers l'entreprise/projet en édition
 	$values = $form_state->getValues();
 	$option = array('entreprise' => $values['entreprise_id']);
-	send_mail('test2');
+	$type = "contrat_maj";
+	send_mail($type);
 	$form_state->setRedirect('obsfonciermodule.edit_entreprise', $option);
 }
 
@@ -106,24 +108,51 @@ function send_mail($type) {
     	case 'contrat_maj':
         	$msg = "Le contrat a été mis à jour";
         	break;
+       	case 'permisminier_add':
+        	$msg = "Le permis minier a été créé";
+        	break;
+    	case 'permisminier_maj':
+        	$msg = "Le permis minier a été mis à jour";
+        	break;
+        case 'permisautorisation_add':
+        	$msg = "L'autorisation a été créé";
+        	break;
+    	case 'permisautorisation_maj':
+        	$msg = "L'autorisation a été mise à jour";
+        	break;
+        case 'projet_add':
+        	$msg = "Le projet a été créé";
+        	break;
+    	case 'projet_maj':
+        	$msg = "Le projet a été mis à jour";
+        	break;
        }
+	 
 	 $key = $type; // Replace with Your key
 	 $to = "ingenosya.guillaume@gmail.com";
 	 $from = 'OBSERVATOIRE DU FONCIER';
-	 $params['body'] = "test";
-	 $params['message'] = "test2";
-	 $params['subject'] = "OBSERVATOIRE DU FONCIER - Projet ...";
+	 $subject = "OBSERVATOIRE DU FONCIER - Projet ...";
 	 $langcode = \Drupal::currentUser()->getPreferredLangcode();
 	 $send = true;
 	
-	 $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+	 //$result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
 	 
+	 //Utilisateur connecté
+	 $idUser = \Drupal::currentUser()->id();
+	 $user = \Drupal\user\Entity\User::load($idUser);
+	 //kint($user->getUsername());
+	 $userConnected = $user->getDisplayName());
+	 $emailConnected = $user->getEmail());
+	 $msgUser = "Utilisateur responsable de la modification : ".$userConnected." (".$emailConnected.")";
+	 
+	  	
 	 $message = [
-        'id' => 'drupal_mail_test_1' ,
-        'headers' => ['Content-type' => 'text/html'],
-        'subject' => "mon sujet",
+        'id' => 'drupal_mail_obsfoncier' ,
+        'headers' => ['Content-type' => 'text/html; charset=UTF-8; format=flowed; delsp=yes'],
+        'subject' => $subject,
+        'from' => $from,
         'to' => $to,
-        'body' => "mon body",
+        'body' => "Bonjour<br><br>".$msg."<br><br>,
       ];
       $mailManager->getInstance(['module' => $module, 'key' => $key])->mail($message);
 	 
