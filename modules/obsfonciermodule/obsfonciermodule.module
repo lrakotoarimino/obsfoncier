@@ -98,12 +98,20 @@ function send_mail($type) {
 	
 	
 	 $mailManager = \Drupal::service('plugin.manager.mail');
-	 $module = 'module-name';
-	 $key = 'node_insert'; // Replace with Your key
+	 $module = 'obsfonciermodule';
+	 switch($type) {
+	 	case 'contrat_add':
+        	$msg = "Le contrat a été créé";
+        	break;
+    	case 'contrat_maj':
+        	$msg = "Le contrat a été mis à jour";
+        	break;
+       }
+	 $key = $type; // Replace with Your key
 	 $to = "ingenosya.guillaume@gmail.com";
 	 $from = 'OBSERVATOIRE DU FONCIER';
-	 $params['message'] = "test";
-	 $params['title'] = "OBSERVATOIRE DU FONCIER - Projet ...";
+	 $params['body'] = "test";
+	 $params['subject'] = "OBSERVATOIRE DU FONCIER - Projet ...";
 	 $langcode = \Drupal::currentUser()->getPreferredLangcode();
 	 $send = true;
 	
