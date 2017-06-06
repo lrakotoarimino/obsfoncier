@@ -111,11 +111,23 @@ function send_mail($type) {
 	 $to = "ingenosya.guillaume@gmail.com";
 	 $from = 'OBSERVATOIRE DU FONCIER';
 	 $params['body'] = "test";
+	 $params['message'] = "test2";
 	 $params['subject'] = "OBSERVATOIRE DU FONCIER - Projet ...";
 	 $langcode = \Drupal::currentUser()->getPreferredLangcode();
 	 $send = true;
 	
 	 $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+	 
+	 $message = [
+        'id' => 'drupal_mail_test_1' ,
+        'headers' => ['Content-type' => 'text/html'],
+        'subject' => $this->randomString(64),
+        'to' => $to,
+        'body' => $this->randomString(512),
+      ];
+      $mailManager->getInstance(['module' => $module, 'key' => $key])->mail($message);
+	 
+	 
 	 if ($result['result'] != true) {
 	    $message = t("Il y a eu un problème en envoyant l'email à @email.", array('@email' => $to));
 	    drupal_set_message($message, 'error');
