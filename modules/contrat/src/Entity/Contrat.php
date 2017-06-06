@@ -176,6 +176,114 @@ class Contrat extends ContentEntityBase implements ContratInterface {
   	return $this->get('motifavenant_id')->target_id;
   }
   
+  /**
+   * {@inheritdoc}
+   */
+  public function setIdContractualisation($id_contractualisation) {
+  	$this->set('id_contractualisation', $id_contractualisation);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getIdContractualisation() {
+  	return $this->get('id_contractualisation')->target_id;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getAnneeNegociation() {
+  	return $this->get('annee_negociation')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setAnneeNegociation($annee_negociation) {
+  	$this->set('annee_negociation', $annee_negociation);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getAnneeSignature() {
+  	return $this->get('annee_signature')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setAnneeSignature($annee_signature) {
+  	$this->set('annee_signature', $annee_signature);
+  	return $this;
+  }
+  
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getAnneeRupture() {
+  	return $this->get('annee_rupture')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setAnneeRupture($annee_rupture) {
+  	$this->set('annee_rupture', $annee_rupture);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getMotifRupture() {
+  	return $this->get('motif_rupture')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setMotifRupture($motif_rupture) {
+  	$this->set('motif_rupture', $motif_rupture);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getAnneeRenouvellement() {
+  	return $this->get('annee_renouvellement')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setAnneeRenouvellement($annee_renouvellement) {
+  	$this->set('annee_renouvellement', $annee_renouvellement);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getMotifRenouvellement() {
+  	return $this->get('motif_renouvellement')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setMotifRenouvellemen($motif_renouvellement) {
+  	$this->set('motif_renouvellement', $motif_renouvellement);
+  	return $this;
+  }
+  
+  
+  
 
   /**
    * {@inheritdoc}
@@ -251,6 +359,44 @@ class Contrat extends ContentEntityBase implements ContratInterface {
       ->setLabel(t('ID Motif avenant'))
       ->setDescription(t('ID Motif avenant.'))
       ->setSetting('target_type', 'motifavenant');
+    
+    $fields['id_contractualisation'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('ID Contractualisation'))
+      ->setDescription(t('ID Contractualisation'))
+      ->setSetting('target_type', 'contractualisation');
+    
+    //Ce n'est pas la bonne phase !
+    /*$fields['id_phase'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('ID Phase'))
+      ->setDescription(t('ID Phase'))
+      ->setSetting('target_type', 'phase');*/
+      
+      $fields['annee_negociation'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t("Année de négociation"))
+      ->setDescription(t("Année de négociation"));
+      
+      $fields['annee_signature'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t("Année de signature"))
+      ->setDescription(t("Année de signature"));
+      
+      $fields['annee_rupture'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t("Année de rupture"))
+      ->setDescription(t("Année de rupture"));
+      
+      $fields['motif_rupture'] = BaseFieldDefinition::create('string')
+      ->setLabel(t("Motif de rupture"))
+      ->setDescription(t("Motif de rupture"));
+      
+      $fields['annee_renouvellement'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t("Année de renouvellement"))
+      ->setDescription(t("Année de renouvellement"));
+      
+      $fields['motif_renouvellement'] = BaseFieldDefinition::create('string')
+      ->setLabel(t("Motif de renouvellement"))
+      ->setDescription(t("Motif de renouvellement"));
+      
+      
+      
       
     return $fields;
   }

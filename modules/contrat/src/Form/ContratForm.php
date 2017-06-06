@@ -43,6 +43,60 @@ class ContratForm extends ContentEntityForm {
     		'#default_value' => $entrepriseId,
     );
     
+    $form['annee_negociation'] = array(
+    		'#title' => "Année du début de négociation du contrat pour accès à la terre",
+    		'#type' => 'number',
+    		'#required' => true,
+    		'#default_value' => $entity->getAnneeNegociation(),
+    		'#min' => 1990,
+    		'#max' => 2030,
+    );
+    
+    $form['annee_signature'] = array(
+    		'#title' => "Année de la signature du contrat pour accès à la terre",
+    		'#type' => 'number',
+    		'#required' => true,
+    		'#default_value' => $entity->getAnneeSignature(),
+    		'#min' => 1990,
+    		'#max' => 2030,
+    );
+    
+    $form['annee_rupture'] = array(
+    		'#title' => "Année de la rupture du contrat pour accès à la terre",
+    		'#type' => 'number',
+    		'#required' => true,
+    		'#default_value' => $entity->getAnneeRupture(),
+    		'#min' => 1990,
+    		'#max' => 2030,
+    );
+    
+    $form['motif_rupture'] = array(
+    		'#title' => "Motif de la rupture du contrat pour accès à la terre",
+    		'#description' => 'Indiquez le motif de la rupture du contrat entre l’Etat et l’investisseur',
+    		'#type' => 'textfield',
+    		'#required' => true,
+    		'#default_value' => $entity->getMotifRupture(),
+    );
+    
+    $form['annee_renouvellement'] = array(
+    		'#title' => "Année de renouvellement du contrat pour accès à la terre ",
+    		'#type' => 'number',
+    		'#required' => true,
+    		'#default_value' => $entity->getAnneeRenouvellement(),
+    		'#min' => 1990,
+    		'#max' => 2030,
+    );
+    
+    
+    $form['motif_renouvellement'] = array(
+    		'#title' => "Motif du renouvellement du contrat pour accès à la terre",
+    		'#description' => 'Indiquer le motif du renouvellement du contrat entre l’Etat et l’investisseur',
+    		'#type' => 'textfield',
+    		'#required' => true,
+    		'#default_value' => $entity->getMotifRenouvellement(),
+    );
+    
+    
     $options = getOptions('motifavenant');
     $form['motifavenant_id'] = array(
     		'#title' => $this->t("Motif avenant"),
