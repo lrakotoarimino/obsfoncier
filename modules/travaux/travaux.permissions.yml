@@ -1,0 +1,22 @@
+add liste des travaux entities:
+  title: 'Create new Liste des travaux entities'
+
+administer liste des travaux entities:
+  title: 'Administer Liste des travaux entities'
+  description: 'Allow to access the administration form to configure Liste des travaux entities.'
+  restrict access: true
+
+delete liste des travaux entities:
+  title: 'Delete Liste des travaux entities'
+
+edit liste des travaux entities:
+  title: 'Edit Liste des travaux entities'
+
+access liste des travaux overview:
+  title: 'Access the Liste des travaux overview page'
+
+view published liste des travaux entities:
+  title: 'View published Liste des travaux entities'
+
+view unpublished liste des travaux entities:
+  title: 'View unpublished Liste des travaux entities'

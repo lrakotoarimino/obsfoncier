@@ -1,0 +1,14 @@
+{
+  "name": "drupal/contractualisation",
+  "type": "drupal-module",
+  "description": "Liste des contractualisations",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/contractualisation",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/contractualisation",
+    "source": "http://cgit.drupalcode.org/contractualisation"
+  },
+  "require": { }
+}

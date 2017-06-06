@@ -1,0 +1,11 @@
+entity.travaux.add_form:
+  route_name: 'entity.travaux.add_page'
+  title: 'Add Liste des travaux'
+  appears_on:
+    - entity.travaux.collection
+entity.travaux_type.add_form:
+  route_name: 'entity.travaux_type.add_form'
+  title: 'Add Liste des travaux type'
+  appears_on:
+    - entity.travaux_type.collection
+

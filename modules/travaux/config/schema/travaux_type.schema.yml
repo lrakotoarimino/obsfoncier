@@ -1,0 +1,12 @@
+travaux.travaux_type.*:
+  type: config_entity
+  label: 'Liste des travaux type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

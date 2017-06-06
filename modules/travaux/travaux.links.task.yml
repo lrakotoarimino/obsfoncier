@@ -1,0 +1,18 @@
+# Liste des travaux routing definition
+
+entity.travaux.canonical:
+  route_name: entity.travaux.canonical
+  base_route: entity.travaux.canonical
+  title: 'View'
+
+entity.travaux.edit_form:
+  route_name: entity.travaux.edit_form
+  base_route: entity.travaux.canonical
+  title: 'Edit'
+
+entity.travaux.delete_form:
+  route_name:  entity.travaux.delete_form
+  base_route:  entity.travaux.canonical
+  title: Delete
+  weight: 10
+

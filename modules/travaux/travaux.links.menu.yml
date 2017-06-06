@@ -1,0 +1,18 @@
+
+# Liste des travaux menu items definition
+entity.travaux.collection:
+  title: 'Liste des travaux list'
+  route_name: entity.travaux.collection
+  description: 'List Liste des travaux entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Liste des travaux type menu items definition
+entity.travaux_type.collection:
+  title: 'Liste des travaux type'
+  route_name: entity.travaux_type.collection
+  description: 'List Liste des travaux type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+
