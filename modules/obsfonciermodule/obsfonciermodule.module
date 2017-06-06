@@ -105,11 +105,11 @@ function obsfonciermodule_edit_entreprise(array &$form, FormStateInterface $form
 	$values = $form_state->getValues();
 	
 	$option = array('entreprise' => $values['entreprise_id']);
-	$type = "contrat_maj";
+	$type = $_SESSION['mail']['type'];
 	
-	if ($type == 'permisminier') $idObject = $values['num_permis'];
-	if ($type == 'permisautorisation') $idObject = $values['name'];
-	if ($type == 'contrat') $idObject = $values['name'];
+	if (strpos($type,'permisminier') === true) $idObject = $values['num_permis'];
+	if (strpos($type, 'permisautorisation') === true) $idObject = $values['name'];
+	if (strpos($type, 'contrat') === true) $idObject = $values['name'];
 
 	
 	send_mail($_SESSION['mail']['type'], $values['entreprise_id'], $idObject);
