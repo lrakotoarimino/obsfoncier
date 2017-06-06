@@ -140,7 +140,7 @@ function send_mail($type) {
 	 //Utilisateur connecté
 	 $idUser = \Drupal::currentUser()->id();
 	 $user = \Drupal\user\Entity\User::load($idUser);
-	 //kint($user->getUsername());
+	 //$user->getUsername();
 	 $userConnected = $user->getDisplayName();
 	 $emailConnected = $user->getEmail();
 	 $msgUser = "Utilisateur responsable de la modification : ".$userConnected." (".$emailConnected.")";
@@ -152,9 +152,9 @@ function send_mail($type) {
         'subject' => $subject,
         'from' => $from,
         'to' => $to,
-        'body' => "Bonjour<br><br>".$msg."<br><br>,
+        'body' => "Bonjour<br><br>".$msg."<br><br>".$msgUser ,
       ];
-      $mailManager->getInstance(['module' => $module, 'key' => $key])->mail($message);
+      $result = $mailManager->getInstance(['module' => $module, 'key' => $key])->mail($message);
 	 
 	 
 	 if ($result['result'] != true) {
