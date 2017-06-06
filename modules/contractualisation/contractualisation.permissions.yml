@@ -1,0 +1,22 @@
+add contractualisation entities:
+  title: 'Create new Contractualisation entities'
+
+administer contractualisation entities:
+  title: 'Administer Contractualisation entities'
+  description: 'Allow to access the administration form to configure Contractualisation entities.'
+  restrict access: true
+
+delete contractualisation entities:
+  title: 'Delete Contractualisation entities'
+
+edit contractualisation entities:
+  title: 'Edit Contractualisation entities'
+
+access contractualisation overview:
+  title: 'Access the Contractualisation overview page'
+
+view published contractualisation entities:
+  title: 'View published Contractualisation entities'
+
+view unpublished contractualisation entities:
+  title: 'View unpublished Contractualisation entities'

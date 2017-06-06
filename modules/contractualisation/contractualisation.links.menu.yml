@@ -1,0 +1,18 @@
+
+# Contractualisation menu items definition
+entity.contractualisation.collection:
+  title: 'Contractualisation list'
+  route_name: entity.contractualisation.collection
+  description: 'List Contractualisation entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Contractualisation type menu items definition
+entity.contractualisation_type.collection:
+  title: 'Contractualisation type'
+  route_name: entity.contractualisation_type.collection
+  description: 'List Contractualisation type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

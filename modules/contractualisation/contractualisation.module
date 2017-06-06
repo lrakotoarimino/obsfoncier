@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains contractualisation.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function contractualisation_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the contractualisation module.
+    case 'help.page.contractualisation':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Liste des contractualisations') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function contractualisation_theme() {
+  $theme = [];
+  $theme['contractualisation'] = [
+    'render element' => 'elements',
+    'file' => 'contractualisation.page.inc',
+    'template' => 'contractualisation',
+  ];
+  $theme['contractualisation_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'contractualisation.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function contractualisation_theme_suggestions_contractualisation(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#contractualisation'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'contractualisation__' . $sanitized_view_mode;
+  $suggestions[] = 'contractualisation__' . $entity->bundle();
+  $suggestions[] = 'contractualisation__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'contractualisation__' . $entity->id();
+  $suggestions[] = 'contractualisation__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

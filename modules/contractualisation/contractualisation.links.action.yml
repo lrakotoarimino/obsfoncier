@@ -1,0 +1,11 @@
+entity.contractualisation.add_form:
+  route_name: 'entity.contractualisation.add_page'
+  title: 'Add Contractualisation'
+  appears_on:
+    - entity.contractualisation.collection
+entity.contractualisation_type.add_form:
+  route_name: 'entity.contractualisation_type.add_form'
+  title: 'Add Contractualisation type'
+  appears_on:
+    - entity.contractualisation_type.collection
+

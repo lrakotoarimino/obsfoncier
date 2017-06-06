@@ -1,0 +1,18 @@
+# Contractualisation routing definition
+
+entity.contractualisation.canonical:
+  route_name: entity.contractualisation.canonical
+  base_route: entity.contractualisation.canonical
+  title: 'View'
+
+entity.contractualisation.edit_form:
+  route_name: entity.contractualisation.edit_form
+  base_route: entity.contractualisation.canonical
+  title: 'Edit'
+
+entity.contractualisation.delete_form:
+  route_name:  entity.contractualisation.delete_form
+  base_route:  entity.contractualisation.canonical
+  title: Delete
+  weight: 10
+
