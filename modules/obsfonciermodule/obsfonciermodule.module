@@ -107,9 +107,9 @@ function obsfonciermodule_edit_entreprise(array &$form, FormStateInterface $form
 	$option = array('entreprise' => $values['entreprise_id']);
 	$type = $_SESSION['mail']['type'];
 	
-	if (strpos($type,'permisminier') === true) $idObject = $values['num_permis'];
-	if (strpos($type, 'permisautorisation') === true) $idObject = $values['name'];
-	if (strpos($type, 'contrat') === true) $idObject = $values['name'];
+	if (in_array($type, array('permisminier_add','permisminier_maj'))) $idObject = $form_state->getValue('num_permis')[0]['value'];
+	if (in_array($type, array('permisautorisation_add','permisautorisation_maj'))) $idObject = $form_state->getValue('name')[0]['value'];
+	if (in_array($type, array('contrat_add','contrat_maj'))) $idObject = $form_state->getValue('name')[0]['value'];
 
 	
 	send_mail($_SESSION['mail']['type'], $values['entreprise_id'], $idObject);
