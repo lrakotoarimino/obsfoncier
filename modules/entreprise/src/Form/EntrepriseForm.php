@@ -17,6 +17,9 @@ class EntrepriseForm extends ContentEntityForm {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var $entity \Drupal\entreprise\Entity\Entreprise */
+  	
+  	
+  	
     $form = parent::buildForm($form, $form_state);
 
     $entity = $this->entity;
@@ -32,11 +35,17 @@ class EntrepriseForm extends ContentEntityForm {
     		'#type' => 'hidden',
     );
     
+    
+    $form["1-line-col2-1"] = array('#markup' => '<div class="row" style="margin-top: 10px;"><div class="col-md-6">');
+    
     $form['adresse'] = array(
     		'#title' => $this->t("Contact et adresse de l'entreprise"),
     		'#type' => 'textfield',
     		'#default_value' => $entity->getAdresse(),
     );
+    
+    $form["1-line-col2-2"] = array('#markup' => '</div><div class="col-md-6">');
+    
     
     $form['cd_projet'] = array(
     		'#title' => $this->t("Code du projet"),
@@ -44,7 +53,7 @@ class EntrepriseForm extends ContentEntityForm {
     		'#required' => true,
     		'#default_value' => $entity->getCdProjet(),
     );
-    
+    $form["2-line-col2-1"] = array('#markup' => '</div><div class="col-md-6">');
     
     $options = array();
     $nidSecteurs= \Drupal::entityQuery('secteur')
@@ -64,6 +73,7 @@ class EntrepriseForm extends ContentEntityForm {
     		'#default_value' => $entity->getSecteurId(),
     );
     
+    $form["2-line-col2-2"] = array('#markup' => '</div><div class="col-md-6">');
     
     $options = array();
     $nidPhases= \Drupal::entityQuery('phase')
@@ -82,6 +92,8 @@ class EntrepriseForm extends ContentEntityForm {
     		'#default_value' => $entity->getPhaseId(),
     );
     
+    $form["3-line-col2-1"] = array('#markup' => '</div><div class="col-md-6">');
+    
     $options = array();
     $nidFormeJuridiques= \Drupal::entityQuery('formejuridique')
     ->execute();
@@ -98,6 +110,8 @@ class EntrepriseForm extends ContentEntityForm {
     		'#required' => true,
     		'#default_value' => $entity->getFormeJuridiqueId(),
     );
+    
+    $form["3-line-col2-2"] = array('#markup' => '</div><div class="col-md-6">');
     
     $options = array();
     $nidActivites= \Drupal::entityQuery('activite')
@@ -116,6 +130,8 @@ class EntrepriseForm extends ContentEntityForm {
     		'#default_value' => $entity->getActiviteId(),
     );
     
+    $form["4-line-col2-1"] = array('#markup' => '</div><div class="col-md-6">');
+    
     $options = array();
     $nidPays= \Drupal::entityQuery('pays')
     ->execute();
@@ -133,13 +149,15 @@ class EntrepriseForm extends ContentEntityForm {
     		'#default_value' => $entity->getPaysId(),
     );
     
+    $form["4-line-col2-2"] = array('#markup' => '</div><div class="col-md-6">');
     
     $form['duree_projet'] = array(
     		'#title' => $this->t("M4 Durée du projet (en années)"),
-    		'#type' => 'integer',
+    		'#type' => 'textfield',
     		'#default_value' => $entity->getDureeProjet(),
     );
     
+    $form["5-line-col2-1"] = array('#markup' => '</div><div>&nbsp;</div>');
     
     //On cache l'auteur
     $form['user_id']['#access'] = FALSE;
@@ -151,6 +169,7 @@ class EntrepriseForm extends ContentEntityForm {
     		'#attributes' => array('onclick' => 'window.history.back();return false;',),
     );
    
+   // $form["5-line-col2-2"] = array('#markup' => '</div>');
 
     return $form;
   }
