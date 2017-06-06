@@ -103,50 +103,63 @@ function obsfonciermodule_liste_entreprise(array &$form, FormStateInterface $for
 function obsfonciermodule_edit_entreprise(array &$form, FormStateInterface $form_state) {
 	//On redirige vers l'entreprise/projet en édition
 	$values = $form_state->getValues();
+	
 	$option = array('entreprise' => $values['entreprise_id']);
 	$type = "contrat_maj";
-	send_mail($_SESSION['mail']['type'], $values['entreprise_id']);
+	
+	if ($type == 'permisminier') $idObject = $values['num_permis'];
+	if ($type == 'permisautorisation') $idObject = $values['name'];
+	if ($type == 'contrat') $idObject = $values['name'];
+
+	
+	send_mail($_SESSION['mail']['type'], $values['entreprise_id'], $idObject);
 	unset($_SESSION['mail']['type']);
 	$form_state->setRedirect('obsfonciermodule.edit_entreprise', $option);
 }
 
-function send_mail($type, $entreprise_id) {
+function send_mail($type, $entreprise_id, $idObject='') {
 	//A chaque update ou create, on va envoyer un email au responsable de l'obs du foncier
 	
+	$entreprise = \Drupal::entityTypeManager()->getStorage('entreprise')->load($entreprise_id);
+    
+    $nom_entreprise = $entreprise->get('name')->getValue()['0']['value'];
+    $cd_projet = $entreprise->get('cd_projet')->getValue()['0']['value'];
+    
+    
 	
 	 $mailManager = \Drupal::service('plugin.manager.mail');
 	 $module = 'obsfonciermodule';
 	 switch($type) {
 	 	case 'contrat_add':
-        	$msg = "Le contrat a été créé";
+        	$msg = "Le contrat ".$idObject." a été créé";
         	break;
     	case 'contrat_maj':
-        	$msg = "Le contrat a été mis à jour";
+        	$msg = "Le contrat ".$idObject." a été mis à jour";
         	break;
        	case 'permisminier_add':
-        	$msg = "Le permis minier a été créé";
+        	$msg = "Le permis minier ".$idObject." a été créé";
         	break;
     	case 'permisminier_maj':
-        	$msg = "Le permis minier a été mis à jour";
+        	$msg = "Le permis minier ".$idObject."  a été mis à jour";
         	break;
         case 'permisautorisation_add':
-        	$msg = "L'autorisation a été créé";
+        	$msg = "L'autorisation ".$idObject."  a été créé";
         	break;
     	case 'permisautorisation_maj':
-        	$msg = "L'autorisation a été mise à jour";
+        	$msg = "L'autorisation ".$idObject."  a été mise à jour";
         	break;
         case 'projet_add':
-        	$msg = "Le projet a été créé";
+        	$msg = "Le projet ".$idObject."  a été créé";
         	break;
     	case 'projet_maj':
-        	$msg = "Le projet a été mis à jour";
+        	$msg = "Le projet ".$idObject."  a été mis à jour";
         	break;
        }
 	 
 	 $key = $type; // Replace with Your key
 	 $to = "ingenosya.guillaume@gmail.com";
 	 $from = 'OBSERVATOIRE DU FONCIER';
-	 $subject = "OBSERVATOIRE DU FONCIER - Projet ...";
+	 $subject = "OBSERVATOIRE DU FONCIER - Projet ".nom_entreprise." (".$cd_projet.")";
 	 $langcode = \Drupal::currentUser()->getPreferredLangcode();
 	 $send = true;
 	
@@ -172,7 +185,7 @@ function send_mail($type, $entreprise_id) {
 	
 	 $headers = array(
 	    'MIME-Version' => '1.0',
-	    'Content-Type' => 'text/plain; charset=UTF-8; format=flowed; delsp=yes',
+	    'Content-Type' => 'text/html; charset=UTF-8; format=flowed; delsp=yes',
 	    'Content-Transfer-Encoding' => '8Bit',
 	    'X-Mailer' => 'Drupal',
 	 );
