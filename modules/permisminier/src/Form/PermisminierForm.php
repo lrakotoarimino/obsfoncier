@@ -45,13 +45,16 @@ class PermisminierForm extends ContentEntityForm {
     		'#default_value' => $entrepriseId,
     );
     
+    $form["1-line-col2-1"] = array('#markup' => '<div class="row" style="margin-top: 10px;"><div class="col-md-6">');
+    
+    
     $form['num_permis'] = array(
     		'#title' => $this->t("Numéro du permis minier"),
     		'#type' => 'textfield',
     		'#default_value' => $entity->getNumPermis(),
     );
     
-    
+    $form["1-line-col2-2"] = array('#markup' => '</div><div class="col-md-6">');
     
     $nidTypePermis = \Drupal::entityQuery('typepermis')
     ->execute();
@@ -66,9 +69,11 @@ class PermisminierForm extends ContentEntityForm {
     		'#type' => 'select',
     		'#empty_option' => $this->t('--Selectionnez un type de permis--'),
     		'#options' => $options,
-    		'#required' => false,
+    		'#required' => true,
     		'#default_value' => $entity->getTypePermisId(),
     );
+    
+    $form["2-line-col2-1"] = array('#markup' => '</div></div><div class="row"><div class="col-md-6">');
     
     $form['dt_delivrance'] = array(
     		'#title' => $this->t("Date de délivrance du permis minier"),
@@ -77,11 +82,16 @@ class PermisminierForm extends ContentEntityForm {
     );
 
    
+    $form["2-line-col2-2"] = array('#markup' => '</div><div class="col-md-6">');
+    
     $form['dt_expiration'] = array(
     		'#title' => $this->t("Date d'expiration du permis minier"),
     		'#type' => 'date',
     		'#default_value' => $entity->getDtExpiration(),
     );
+    
+    
+    $form["3-line-col2-1"] = array('#markup' => '</div></div><div class="row"><div>&nbsp;</div></div>');
     
     //On cache l'auteur
     $form['user_id']['#access'] = FALSE;

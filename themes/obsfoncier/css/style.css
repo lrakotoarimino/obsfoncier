@@ -271,3 +271,11 @@ div#edit-user-id-wrapper {
 a.name.navbar-brand {
     display: none;
 }
+
+label.control-label, label.control-label {
+	width:100%;	
+}
+
+input#edit-dt-delivrance, input#edit-dt-expiration {
+    width: 160px;
+}
