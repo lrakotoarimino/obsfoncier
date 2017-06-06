@@ -80,6 +80,7 @@ function obsfonciermodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
 
 function obsfonciermodule_liste_entreprise(array &$form, FormStateInterface $form_state) {
 	//On redirige vers la liste des entreprises
+	send_mail('test');
 	$form_state->setRedirect('obsfonciermodule.liste_entreprise');
 }
 
@@ -88,5 +89,35 @@ function obsfonciermodule_edit_entreprise(array &$form, FormStateInterface $form
 	//On redirige vers l'entreprise/projet en édition
 	$values = $form_state->getValues();
 	$option = array('entreprise' => $values['entreprise_id']);
+	send_mail('test2');
 	$form_state->setRedirect('obsfonciermodule.edit_entreprise', $option);
 }
+
+function send_mail($type) {
+	//A chaque update ou create, on va envoyer un email au responsable de l'obs du foncier
+	
+	
+	 $mailManager = \Drupal::service('plugin.manager.mail');
+	 $module = 'module-name';
+	 $key = 'node_insert'; // Replace with Your key
+	 $to = "ingenosya.guillaume@gmail.com";
+	 $from = 'OBSERVATOIRE DU FONCIER';
+	 $params['message'] = "test";
+	 $params['title'] = "OBSERVATOIRE DU FONCIER - Projet ...";
+	 $langcode = \Drupal::currentUser()->getPreferredLangcode();
+	 $send = true;
+	
+	 $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+	 if ($result['result'] != true) {
+	    $message = t("Il y a eu un problème en envoyant l'email à @email.", array('@email' => $to));
+	    drupal_set_message($message, 'error');
+	    \Drupal::logger('mail-log')->error($message);
+	    return;
+	 }
+	
+	 $message = t('Un email a été envoyé à @email ', array('@email' => $to));
+	 drupal_set_message($message);
+	
+}
+	
+	
