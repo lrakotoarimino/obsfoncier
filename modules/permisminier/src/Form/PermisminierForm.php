@@ -49,7 +49,7 @@ class PermisminierForm extends ContentEntityForm {
     
     
     $form['num_permis'] = array(
-    		'#title' => $this->t("Numéro du permis minier"),
+    		'#title' => $this->t("Numéros de permis minier ou autorisation"),
     		'#type' => 'textfield',
     		'#default_value' => $entity->getNumPermis(),
     );
@@ -65,7 +65,7 @@ class PermisminierForm extends ContentEntityForm {
     asort($options);
     
     $form['typepermis_id'] = array(
-    		'#title' => $this->t("Type de permis"),
+    		'#title' => $this->t("Type de permis minier ou autorisation"),
     		'#type' => 'select',
     		'#empty_option' => $this->t('--Selectionnez un type de permis--'),
     		'#options' => $options,

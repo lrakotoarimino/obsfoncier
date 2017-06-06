@@ -89,7 +89,7 @@ class EntrepriseForm extends ContentEntityForm {
     }
     asort($options);
     $form['pays_id'] = array(
-    		'#title' => $this->t("Pays"),
+    		'#title' => $this->t("Quel est le pays d’origine des investisseurs "),
     		'#type' => 'select',
     		'#empty_option' => $this->t('--Selectionnez un pays--'),
     		'#options' => $options,
@@ -110,7 +110,7 @@ class EntrepriseForm extends ContentEntityForm {
     }
     asort($options);
     $form['activite_id'] = array(
-    		'#title' => $this->t("Activité"),
+    		'#title' => $this->t("Quelle est l’activité principale de l’entreprise"),
     		'#type' => 'select',
     		'#empty_option' => $this->t('--Selectionnez une activité--'),
     		'#options' => $options,
@@ -176,7 +176,7 @@ class EntrepriseForm extends ContentEntityForm {
     }
     asort($options);
     $form['phase_id'] = array(
-    		'#title' => $this->t("Phase"),
+    		'#title' => $this->t("Phase d’avancement du projet"),
     		'#type' => 'select',
     		'#empty_option' => $this->t('--Selectionnez une phase--'),
     		'#options' => $options,
@@ -190,7 +190,7 @@ class EntrepriseForm extends ContentEntityForm {
     $form["5-line-col2-2"] = array('#markup' => '</div><div class="col-md-6">');
     
     $form['duree_projet'] = array(
-    		'#title' => $this->t("M4 Durée du projet (en années)"),
+    		'#title' => $this->t("Durée du projet (en années)"),
     		'#type' => 'textfield',
     		'#default_value' => $entity->getDureeProjet(),
     );
@@ -198,7 +198,7 @@ class EntrepriseForm extends ContentEntityForm {
     $form["6-line-col2-1"] = array('#markup' => '</div></div><div class="row"><div class="col-md-6">');
     
     $form['destination_prod'] = array(
-    		'#title' => $this->t("M3 Destination des produits"),
+    		'#title' => $this->t("Destination des produits"),
     		'#type' => 'textfield',
     		'#default_value' => $entity->getDestinationProd(),
     );
@@ -206,7 +206,7 @@ class EntrepriseForm extends ContentEntityForm {
     $form["6-line-col2-2"] = array('#markup' => '</div><div class="col-md-6">');
     
     $form['montant_invest'] = array(
-    		'#title' => $this->t("M6 Montant à investir (en ariary)"),
+    		'#title' => $this->t("Montant à investir (en ariary)"),
     		'#type' => 'textfield',
     		'#default_value' => $entity->getMontantInvest(),
     );
@@ -215,7 +215,7 @@ class EntrepriseForm extends ContentEntityForm {
     $form["7-line-col2-1"] = array('#markup' => '</div></div><div class="row"><div class="col-md-6">');
     
     $form['plan_amenagement_soumis'] = array(
-    		'#title' => $this->t("M7.1 Plan d’aménagement du projet soumis à la DGAT/OAT"),
+    		'#title' => $this->t("Plan d’aménagement du projet soumis à la DGAT/OAT"),
     		'#type' => 'textarea',
     		'#default_value' => $entity->getPlanAmenagementSoumis(),
     );
@@ -223,7 +223,7 @@ class EntrepriseForm extends ContentEntityForm {
     $form["7-line-col2-2"] = array('#markup' => '</div><div class="col-md-6">');
     
     $form['plan_amenagement_valide'] = array(
-    		'#title' => $this->t("M7.2 Plan d’aménagement du projet validé par la DGAT/OAT "),
+    		'#title' => $this->t("Plan d’aménagement du projet validé par la DGAT/OAT"),
     		'#type' => 'textarea',
     		'#default_value' => $entity->getPlanAmenagementValide(),
     );

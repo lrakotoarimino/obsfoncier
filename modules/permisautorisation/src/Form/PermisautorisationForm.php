@@ -121,7 +121,15 @@ class PermisautorisationForm extends ContentEntityForm {
     );
     
     
-    
+    $form['annee_obtention'] = array(
+    		'#title' => "4. Année d’obtention du permis ou autorisation environnementale",
+    		'#description' => 'Indiquez l’année d’obtention du permis ou autorisation',
+    		'#type' => 'number',
+    		'#required' => true,
+    		'#default_value' => $entity->getAnneeObtention(),
+    		'#min' => 1990,
+    		'#max' => 2030,
+    );
     
     $form['actions']['back']= array(
     		'#type' => 'button',

@@ -179,6 +179,21 @@ class Permisautorisation extends ContentEntityBase implements Permisautorisation
   /**
    * {@inheritdoc}
    */
+  public function getAnneeObtention() {
+  	return $this->get('annee_obtention')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setAnneeObtention($annee_obtention) {
+  	$this->set('annee_obtention', $annee_obtention);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
   public function getEncAe() {
   	return $this->get('enc_ae')->value;
   }
@@ -344,6 +359,10 @@ class Permisautorisation extends ContentEntityBase implements Permisautorisation
       ->setLabel(t('Autorité Ministère'))
       ->setDescription(t('Autorité Ministère'))
       ->setDefaultValue(FALSE);
+      
+   $fields['annee_obtention'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Année obtention'))
+      ->setDescription(t('Année obtention'));
       
    $fields['numero_permis'] = BaseFieldDefinition::create('string')
       ->setLabel(t("Numéro du permis"))
