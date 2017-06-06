@@ -287,8 +287,115 @@ class Entreprise extends ContentEntityBase implements EntrepriseInterface {
   	return $this->get('duree_projet')->value;
   }
   
+  /**
+   * {@inheritdoc}
+   */
+  public function setEmploiLocal($emploi_local) {
+  	$this->set('emploi_local', $emploi_local);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getEmploiLocal() {
+  	return $this->get('emploi_local')->value;
+  }
   
   
+  /**
+   * {@inheritdoc}
+   */
+  public function setInfraAccompagnement($infra_accompagnement) {
+  	$this->set('infra_accompagnement', $infra_accompagnement);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getInfraAccompagnement() {
+  	return $this->get('infra_accompagnement')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setDestinationProd($destination_prod) {
+  	$this->set('destination_prod', $destination_prod);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getDestinationProd() {
+  	return $this->get('destination_prod')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setMontantInvest($montant_invest) {
+  	$this->set('montant_invest', $montant_invest);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getMontantInvest() {
+  	return $this->get('montant_invest')->value;
+  }
+  
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setPlanAmenagementSoumis($plan_amenagement_soumis) {
+  	$this->set('plan_amenagement_soumis', $plan_amenagement_soumis);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getPlanAmenagementSoumis() {
+  	return $this->get('plan_amenagement_soumis')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setPlanAmenagementValide($plan_amenagement_valide) {
+  	$this->set('plan_amenagement_valide', $plan_amenagement_valide);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getPlanAmenagementValide() {
+  	return $this->get('plan_amenagement_valide')->value;
+  }
+  
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setRegimeInvest($regime_invest) {
+  	$this->set('regime_invest', $regime_invest);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getRegimeInvest() {
+  	return $this->get('regime_invest')->value;
+  }
+  
+ 
   
   
 
@@ -399,6 +506,34 @@ class Entreprise extends ContentEntityBase implements EntrepriseInterface {
       ->setDescription(t("M4 Durée du projet (en années)"));
       
       
+    $fields['emploi_local'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Emploi local'))
+      ->setDescription(t('Emploi local'));
+      
+    $fields['infra_accompagnement'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Infrastructure accompagnement'))
+      ->setDescription(t('Infrastructure accompagnement'));
+      
+    $fields['destination_prod'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Destination de la production'))
+      ->setDescription(t('Destination de la production'));
+      
+    $fields['montant_invest'] = BaseFieldDefinition::create('decimal')
+      ->setLabel(t('Montant des investissements'))
+      ->setDescription(t('Montant des investissements'));
+      
+    $fields['plan_amenagement_soumis'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Montant des investissements'))
+      ->setDescription(t('Montant des investissements'));
+      
+    $fields['plan_amenagement_valide'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Montant des investissements'))
+      ->setDescription(t('Montant des investissements'));
+      
+    $fields['regime_invest'] = BaseFieldDefinition::create('string')
+      ->setLabel(t("Régime de l'investissement"))
+      ->setDescription(t("Régime de l'investissement"));
+
       
       
     return $fields;
