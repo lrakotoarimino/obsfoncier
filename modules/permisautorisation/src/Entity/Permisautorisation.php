@@ -161,6 +161,89 @@ class Permisautorisation extends ContentEntityBase implements Permisautorisation
   	return $this;
   }
   
+  /**
+   * {@inheritdoc}
+   */
+  public function getNumeroPermis() {
+  	return $this->get('numero_permis')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setNumeroPermis($numero_permis) {
+  	$this->set('numero_permis', $numero_permis);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getEncAe() {
+  	return $this->get('enc_ae')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getEncPe() {
+  	return $this->get('enc_pe')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getOcAe() {
+  	return $this->get('oc_ae')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getOcPe() {
+  	return $this->get('oc_pe')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getOne() {
+  	return $this->get('one')->value;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function getMinistere() {
+  	return $this->get('ministere')->value;
+  }
+  
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setTypePermisEnv($field) {
+  	$this->set('enc_ae', FALSE);
+  	$this->set('enc_pe', FALSE);
+  	$this->set('oc_ae', FALSE);
+  	$this->set('oc_pe', FALSE);
+  	if ($field != 'aucun') $this->set($field, TRUE);
+  	return $this;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function setAutorite($field) {
+  	$this->set('one', FALSE);
+  	$this->set('ministere', FALSE);
+  	$this->set($field, TRUE);
+  	return $this;
+  }
+  
+  
+  
+  
 
   /**
    * {@inheritdoc}
@@ -231,6 +314,40 @@ class Permisautorisation extends ContentEntityBase implements Permisautorisation
       ->setLabel(t('ID Entreprise'))
       ->setDescription(t('ID Entreprise.'))
       ->setSetting('target_type', 'entreprise');
+
+   $fields['enc_pe'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Type Permis en cours PE'))
+      ->setDescription(t('Type Permis en cours PE'))
+      ->setDefaultValue(FALSE);
+      
+   $fields['enc_ae'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Type Permis en cours AE'))
+      ->setDescription(t('Type Permis en cours AE'))
+      ->setDefaultValue(FALSE);
+      
+   $fields['oc_pe'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Type Permis octroyé PE'))
+      ->setDescription(t('Type Permis octroyé PE'))
+      ->setDefaultValue(FALSE);
+      
+   $fields['oc_ae'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Type Permis octroyé AE'))
+      ->setDescription(t('Type Permis octroyé AE'))
+      ->setDefaultValue(FALSE);
+   
+   $fields['one'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Autorité ONE'))
+      ->setDescription(t('Autorité ONE'))
+      ->setDefaultValue(FALSE);
+   
+   $fields['ministere'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Autorité Ministère'))
+      ->setDescription(t('Autorité Ministère'))
+      ->setDefaultValue(FALSE);
+      
+   $fields['numero_permis'] = BaseFieldDefinition::create('string')
+      ->setLabel(t("Numéro du permis"))
+      ->setDescription(t("Numéro du permis"));
       
       
     return $fields;
