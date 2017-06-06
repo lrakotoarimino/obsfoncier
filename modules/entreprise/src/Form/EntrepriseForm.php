@@ -41,6 +41,7 @@ class EntrepriseForm extends ContentEntityForm {
     $form['cd_projet'] = array(
     		'#title' => $this->t("Code du projet"),
     		'#type' => 'textfield',
+    		'#required' => true,
     		'#default_value' => $entity->getCdProjet(),
     );
     

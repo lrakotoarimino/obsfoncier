@@ -149,17 +149,17 @@ function send_mail($type, $entreprise_id, $idObject='') {
         	$msg = "L'autorisation ".$idObject."  a été mise à jour";
         	break;
         case 'projet_add':
-        	$msg = "Le projet ".$idObject."  a été créé";
+        	$msg = "Le projet ".$nom_entreprise." (".$cd_projet.")"  a été créé";
         	break;
     	case 'projet_maj':
-        	$msg = "Le projet ".$idObject."  a été mis à jour";
+        	$msg = "Le projet ".$nom_entreprise." (".$cd_projet.")"  a été mis à jour";
         	break;
        }
 	 
 	 $key = $type; // Replace with Your key
 	 $to = "ingenosya.guillaume@gmail.com";
 	 $from = 'OBSERVATOIRE DU FONCIER';
-	 $subject = "OBSERVATOIRE DU FONCIER - Projet ".nom_entreprise." (".$cd_projet.")";
+	 $subject = "OBSERVATOIRE DU FONCIER - Projet ".$nom_entreprise." (".$cd_projet.")";
 	 $langcode = \Drupal::currentUser()->getPreferredLangcode();
 	 $send = true;
 	
