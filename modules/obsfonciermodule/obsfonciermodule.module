@@ -141,8 +141,8 @@ function send_mail($type) {
 	 $idUser = \Drupal::currentUser()->id();
 	 $user = \Drupal\user\Entity\User::load($idUser);
 	 //kint($user->getUsername());
-	 $userConnected = $user->getDisplayName());
-	 $emailConnected = $user->getEmail());
+	 $userConnected = $user->getDisplayName();
+	 $emailConnected = $user->getEmail();
 	 $msgUser = "Utilisateur responsable de la modification : ".$userConnected." (".$emailConnected.")";
 	 
 	  	
