@@ -40,7 +40,7 @@ class VwPermisautorisation extends BlockBase {
 		
 				
 		return [
-				'#markup' => $renderview . $link . '<hr />'
+				'#markup' => $renderview .  '<hr />'
 		];
 	}
 	
