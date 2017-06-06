@@ -149,10 +149,10 @@ function send_mail($type, $entreprise_id, $idObject='') {
         	$msg = "L'autorisation ".$idObject."  a été mise à jour";
         	break;
         case 'projet_add':
-        	$msg = "Le projet ".$nom_entreprise." (".$cd_projet.")"  a été créé";
+        	$msg = "Le projet ".$nom_entreprise." (".$cd_projet.") a été créé";
         	break;
     	case 'projet_maj':
-        	$msg = "Le projet ".$nom_entreprise." (".$cd_projet.")"  a été mis à jour";
+        	$msg = "Le projet ".$nom_entreprise." (".$cd_projet.") a été mis à jour";
         	break;
        }
 	 
